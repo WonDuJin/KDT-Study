@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{ width: 1920px;
+          height: 1080px;
+          margin: 0; 
+          padding: 0;
+          box-sizing: border-box;
+          background-image: url('https://res09.bignox.com/appcenter/kr/2019/12/1567678471_3RUW6NhdBrowHs1neoJsXor9ipDdVetwWHKwNODH.jpeg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+    }
+    ul {margin: 0; padding: 0;  }
+    
+    a { text-decoration: none;}
+      
+
+    
+    .nav {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+    }
+    
+    .search{
+      width: 10vw;
+      height: 15px;      
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      margin: 20px;
+      text-align: left;
+      }/*왼쪽 상단 검색창 디자인*/
+      
+    .red{
+      width: 30px;
+      color: red;
+      font-size: 50px;     
+      font-style: italic;
+    }
+    .red:hover{
+      transition: all 1s ease;
+      transform:scale(1.1);
+      
+    }
+    .circle1{
+      width: 50px;
+      height: 50px;
+      border-radius : 50%;
+      background-color: darkgray  ;
+      margin: 20px;  
+    }
+    .main aside,article{
+      display: inline-block;  
+    }
+    
+    /*왼쪽 메뉴바*/
+    .menu div{
+      width: 10vw;
+      height: 20px;
+      background-color: #333;
+      color: white;
+      margin: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 250px;
+      
+    }
+  
+    
+    .mainbar div{
+      width: 8vw;
+      height: 470px;
+      background-color: darkgray;
+      margin: 15px;
+      float: left;
+    }
+    
+    .img1 {
+      
+      background-image: url('https://images.chosun.com/resizer/a5YP6FNZMLmdoSmJCXiQJcN25Fw=/540x799/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/CFCFB3LGQ75OBNIYD36LN74FHQ.jpg');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+    
+    }
+    
+    .img2 {
+      background-image: url('https://img.hankyung.com/photo/202108/01.27351934.1.jpg');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+      
+
+    }
+    .img3 {
+      background-image: url('https://noonoo-images.studiouniversal.net/info/tv/84777/hlmbe736EuN4JP7NM1NjvQgn53I.jpg');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }
+    
+    .img4 {
+      background-image: url('https://blog.kakaocdn.net/dn/bITzc8/btqOzAtbJRE/LHeDEKnBrON4H5M7yVmla1/img.jpg');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }
+    .img5 {
+      
+      background-image: url('https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjRfMTI3/MDAxNTc3MTU0MTY1NzU0.aoV9JbcG3lFGV5kxe1MBzuIB40MjK30pEuRxNlXRCRgg.mfyo8weZf6eLwliScB3NNFvmDwXD39gMWddtviHdJOQg.JPEG.hjy24090/%EB%84%B7%ED%94%84%EB%A6%AD%EC%8A%A4-%ED%8C%90%ED%83%80%EC%A7%80%EB%93%9C%EB%9D%BC%EB%A7%88-%EC%9C%84%EC%B3%90-The_Witcher-%EC%8B%9C%EC%A6%8C1_(4).jpg?type=w800');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }
+    .img6 {
+      
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNu5i2HQJCbN9m5yOgLFd36GNd-H4i8cc2wLqF07jblOmeVtHE989FLQWLBeXPMYDQuE&usqp=CAU');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }
+    .img7 {
+      
+      background-image: url('https://thumb.mt.co.kr/06/2021/06/2021060416171654420_2.jpg/dims/optimize/');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }
+    .img8 {
+      
+      background-image: url('https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDhfMjM3/MDAxNTk2ODc3NjAyODcx.q-YLr8gSLUl_AQR1IBI05GoN4uuUvWQEbx36B0izw9wg.e1EGKaFQPCWUIvNwkWJtgKxBr4fexMVriXd-M8GQLHIg.JPEG.dkssk715/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM__V1_.jpg?type=w800');
+      background-size: 100% 100%  ;
+      background-repeat: no-repeat;
+
+    }      
+    .img1:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img2:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img3:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img4:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img5:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img6:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img7:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+    .img8:hover {
+      transition: all 1s ease;
+      transform:scale(1.25);
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <header>
+      <nav>
+        <ul class="nav">
+          <li class="search">Search</li>
+          <li class="red"><a href="http://127.0.0.1:5500/designtest.html" style="color: red;"><b>NETFLIX</b></a></li>
+          <li class="circle1"></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main">
+        <aside class="menu">
+          <div>TV 드라마</div>
+          <div>영화</div>
+          <div>애니메이션</div>
+          <div>다큐멘터리</div>
+          <div>NETFLIX</div>
+        </aside>
+        <article class="mainbar">
+          <div class="img1" style="margin-top: 150px;"></div>
+          <div class="img2" style="margin-top: 200px;"></div>
+          <div class="img3" style="margin-top: 250px;"></div>
+          <div class="img4" style="margin-top: 200px;"></div>
+          <div class="img5" style="margin-top: 150px;"></div>
+          <div class="img6" style="margin-top: 250px;"></div>
+          <div class="img7" style="margin-top: 200px;"></div>
+          <div class="img8" style="margin-top: 150px;"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
