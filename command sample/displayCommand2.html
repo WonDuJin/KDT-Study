@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    body > div { /* 1번 태그 */
+      width:100vw;
+      height:100vh;
+      background-color: chocolate;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body > div > div { /* 2번 태그 */
+      width:80vw;
+      height:80vh;
+      background-color: cadetblue;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body > div > div > div { /* 3번 태그 */
+      width:60vw;
+      height:60vh;
+      background-color: darkkhaki;
+
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+      flex-direction: column;
+    }
+
+    body > div > div > div > div:nth-child(1) { /* 4-1번 태그 */
+      width:60vw;
+      height:60vh;
+      background-color: cornsilk;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    body > div > div > div > div:nth-child(2) { /* 4-2번 태그 */
+      width:60vw;
+      height:60vh;
+      background-color: darkmagenta;
+
+      display:flex;
+      /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+      justify-content: space-around;
+      /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+      align-items: center;
+    }
+
+
+    /* 5번 태그들 */
+    body > div > div > div > div:nth-child(2) > div:nth-child(1) {width:300px; height:80%; background-color: #fff;}
+    body > div > div > div > div:nth-child(2) > div:nth-child(2) {width:300px; height:80%; background-color: coral;}
+    body > div > div > div > div:nth-child(2) > div:nth-child(3) {width:300px; height:80%; background-color: yellowgreen;}
+
+
+  </style>
+</head>
+<body>
+  <div> <!-- 1 -->
+    <div> <!-- 2 -->
+      <div> <!-- 3 -->
+
+        <div></div> <!-- 4-1 -->
+
+        <div> <!-- 4-2 -->
+          <div></div> <!-- 5-1 -->
+          <div></div> <!-- 5-2 -->
+          <div></div> <!-- 5-3 -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
