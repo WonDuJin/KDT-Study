@@ -19,25 +19,55 @@
       align-items: center;
       height: 100vh;
     }
-    body > main > nav > div> div:nth-child(1) {
+    body > main > nav > div:nth-child(1) {
       display: flex;
       justify-content: center;
     }
-    body > main > nav > div> div:nth-child(1)> div:nth-child(1){
-      width: 400px;
-      height: 200px;
-      background-color: gray;
+
+    body > main > nav > div> div:nth-child(3){
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }        
+    
+    body > main > nav > div:nth-child(2)>div:nth-child(1){
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
-    body > main > nav > div> div:nth-child(1)> div:nth-child(2){
-      width: 400px;
-      height: 800px;
-      background-color: lightgray;
+    body > main > nav > div:nth-child(2)>div:nth-child(1)> div{
+      width: 60px;
+      height: 70px;
+      background-color: white;
     }
-    body > main > nav > div> div:nth-child(1)> div:nth-child(3){
-      width: 400px;
-      height: 200px;
-      background-color: gray;
+    body > main > nav > div:nth-child(3){
+      width: 1000px;
+      height: 600px;
+      border: 5px solid black;
+      position: absolute;
     }
+    .wid-4{width: 400px;}
+    .wid-ih{width: inherit;}
+    .hg-2{height: 200px;}
+    .hg-8{height: 800px;}
+    .hg-1{height: 100px;}
+    .hg-ih{height: inherit;}
+    .bg-gray{background-color: gray;}
+    .bg-lightgray{background-color: lightgray;}
+    .margin{margin: 0 7px;}
+    .position-ab{position: absolute;}
+    .dp-flex{display: flex;}
+    .just-c{justify-content: center;}
+    .flex-d-c{flex-direction: column;}
+    .top-50{top: 50px;}
+    .left-150{left: 150px;}
+    .left-20{left: 20px;}
+    .text-c{text-align: center;}
+    .h1 {font-size: 60px;}
+    .padding{padding: 5px 20px;}
+    .margin-0{margin: 0;}
+
+    
 
   </style>
 </head>
@@ -46,30 +76,31 @@
     <nav>
       <div>
         <div>
-          <div>            
+          <div class="wid-4 hg-2 bg-gray">            
           </div>
         </div>
         <div>
-          <div>
+          <div class="wid-4 hg-8 bg-lightgray margin">
           </div>
         </div>
         <div>
-          <div>           
+          <div class="wid-4 hg-2 bg-gray">           
           </div>
         </div>
       </div>
-      <div>
-        <div>
+      <div class="position-ab wid-4 hg-8 dp-flex just-c">
+        <div class="position-ab top-50 left-150 wid-ih hg-1 bg-gray dp-flex">
           <div></div>
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <div>
-          <div></div>
-          <div></div>
+        <div class="position-ab top-50 left-20 wid-4 hg-ih dp-flex just-c flex-d-c">
+          <h1 class="h1 padding margin-0">Hello</h1>
+          <p class="padding margin-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ut laborum harum quae ab, nostrum fugiat labore temporibus nulla excepturi officia nam quaerat quo tempora iure rerum assumenda incidunt. Error!</p>
         </div>
       </div>
+      <div></div>
     </nav>
   </main>
 </body>
