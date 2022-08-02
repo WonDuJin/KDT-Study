@@ -1,0 +1,102 @@
+$gray:#808080;
+$lightgray:#D3D3D3;
+$white:#ffff;
+$po-absolute:absolute;
+$flex:flex;
+
+
+*{margin:0; padding: 0; box-sizing: border-box;}
+
+@mixin whb($wid,$hg,$col) {
+  width: $wid;
+  height: $hg;
+  background-color: $col;  
+}
+
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  
+  & > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    & > div:nth-child(1){
+      display: flex;
+      justify-content: center;
+
+      & > div:nth-child(1) > div:nth-child(1){
+        @include whb(400, 200,#808080);
+      }
+    }
+    & > div > div:nth-child(3){
+      display : flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    & > div:nth-child(2) > div:nth-child(1){
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      & > div{
+        width: 60px;
+        height: 70px;
+        background-color: $white;
+      }
+    }
+    & > div:nth-child(3){
+      width: 1000px;
+      height: 600px;
+      border: 5px solid black;
+      position: absolute;
+    }
+  }
+}
+
+
+.wid{
+  &-4{
+    width: 400px;
+  }
+  &-ih
+  {
+    width: inherit;
+  }
+}
+.hg{
+  &-1{
+    height: 100px;
+  }
+  &-2{
+    height: 200px;
+  }
+  &-2{
+    height: 800px;
+  }
+  &ih{
+    height: inherit;
+  }
+  
+}
+.bg{
+  &-gray{
+    background-color: $gray;
+  }
+  &-lightgray{
+    background-color: $lightgray;
+  }
+}
+.margin{
+  &-07{
+    margin: 0 7px;
+  }
+  &-0{
+    margin: 0;
+  }
+}
+
+
+

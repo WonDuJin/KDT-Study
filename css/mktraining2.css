@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+#root > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#root > nav > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+#root > nav > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  width: 400;
+  height: 200;
+  background-color: #808080;
+}
+#root > nav > div > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#root > nav > div:nth-child(2) > div:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#root > nav > div:nth-child(2) > div:nth-child(1) > div {
+  width: 60px;
+  height: 70px;
+  background-color: white;
+}
+#root > nav > div:nth-child(3) {
+  width: 1000px;
+  height: 600px;
+  border: 5px solid black;
+  position: absolute;
+}
+
+.wid-4 {
+  width: 400px;
+}
+.wid-ih {
+  width: inherit;
+}
+
+.hg-1 {
+  height: 100px;
+}
+.hg-2 {
+  height: 200px;
+}
+.hg-2 {
+  height: 800px;
+}
+.hgih {
+  height: inherit;
+}
+
+.bg-gray {
+  background-color: #808080;
+}
+.bg-lightgray {
+  background-color: #D3D3D3;
+}
+
+.margin-07 {
+  margin: 0 7px;
+}
+.margin-0 {
+  margin: 0;
+}/*# sourceMappingURL=mktraining2.css.map */

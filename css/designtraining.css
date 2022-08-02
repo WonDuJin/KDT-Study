@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root > div:nth-child(1) {
+  width: 700px;
+  height: 400px;
+  background-color: #fff;
+  position: absolute;
+  top: 50px;
+}
+#root > div:nth-child(1) > div:nth-child(1) {
+  width: inherit;
+  height: inherit;
+  background-color: #505050;
+  position: absolute;
+  top: 30px;
+}
+#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  width: 400px;
+  height: 150px;
+  background-color: #696969;
+  position: absolute;
+  bottom: 265px;
+  right: 10px;
+}
+#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > ul {
+  color: #fff;
+  font-size: 7px;
+  padding-top: 10px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+  position: absolute;
+  bottom: 40px;
+  right: 200px;
+}
+#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > h1 {
+  color: #fff;
+  font-size: 3em;
+  padding: 0 20px;
+}
+#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > p {
+  color: #fff;
+  font-size: 5px;
+  padding: 0 20px;
+}
+#root > div:nth-child(2) {
+  width: 700px;
+  height: 400px;
+  background-color: #d3d3d3;
+  position: absolute;
+  top: 500px;
+}
+#root > div:nth-child(2) > div:nth-child(1) {
+  width: inherit;
+  height: inherit;
+  background-color: #707070;
+  position: absolute;
+  top: 30px;
+  background-image: url(https://cdn.pixabay.com/photo/2015/05/29/19/18/cafe-789635_960_720.jpg);
+}
+#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  width: 400px;
+  height: 150px;
+  background-color: #333;
+  position: absolute;
+  bottom: 280px;
+  right: 10px;
+  border-radius: 10px;
+  opacity: 0.5;
+  background: linear-gradient(#333, #fff);
+}
+#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > ul {
+  color: #fff;
+  font-size: 7px;
+  padding-top: 10px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  position: absolute;
+  bottom: 40px;
+  right: 200px;
+}
+#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > h1 {
+  color: #fff;
+  font-size: 4em;
+  padding: 0 20px;
+}
+#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > p {
+  color: #fff;
+  font-size: 5px;
+  padding: 0 20px;
+}/*# sourceMappingURL=designtraining.css.map */
