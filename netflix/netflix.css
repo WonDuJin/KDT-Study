@@ -1,0 +1,155 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: 1px solid #333;
+  border-radius: 50px;
+  width: 20vw;
+  height: 2vh;
+  background-color: #333;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://res09.bignox.com/appcenter/kr/2019/12/1567678471_3RUW6NhdBrowHs1neoJsXor9ipDdVetwWHKwNODH.jpeg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  /*<body> 설정*/
+}
+#root > header > div {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+#root > header > div > div:nth-child(1) {
+  width: 30vw;
+  height: 3vh;
+  position: relative;
+  top: 30px;
+  left: 20px;
+}
+#root > header > div > div:nth-child(1) > div {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 195px;
+}
+#root > header > div > div:nth-child(1) > div > div {
+  color: #a9a9a9;
+}
+#root > header > div > div:nth-child(2) {
+  width: 3vw;
+  color: #FF0000;
+  font-size: 50px;
+  font-style: italic;
+  position: relative;
+  right: 15%;
+}
+#root > header > div > div:nth-child(2):hover {
+  transition: all 1s ease;
+  transform: scale(1.1);
+}
+#root > header > div > div:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #a9a9a9;
+  margin: 20px;
+  position: relative;
+  right: 200px;
+  background-image: url("https://github.githubassets.com/images/modules/codespaces/github-vscode-logo-light.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#root > header > div > div:nth-child(3) > div {
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  top: 11px;
+  left: 60px;
+}
+#root > main > section > aside {
+  position: absolute;
+  top: 300px;
+  left: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+}
+#root > main > section > aside > div {
+  width: 10vw;
+  height: 2vh;
+  background-color: #333;
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+#root > main > section > article {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  left: 330px;
+  align-items: center;
+}
+#root > main > section > article > div {
+  width: 7vw;
+  height: 50vh;
+  background-color: #a9a9a9;
+  margin: 15px;
+  background-size: 9vw 50vh;
+  background-repeat: no-repeat;
+}
+#root > main > section > article > div:hover {
+  transition: all 1s ease;
+  transform: scale(1.25);
+}
+#root > main > section > article > div:nth-child(1) {
+  background-image: url("https://images.chosun.com/resizer/a5YP6FNZMLmdoSmJCXiQJcN25Fw=/540x799/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/CFCFB3LGQ75OBNIYD36LN74FHQ.jpg");
+  position: relative;
+  bottom: 50px;
+}
+#root > main > section > article > div:nth-child(2) {
+  background-image: url("https://img.hankyung.com/photo/202108/01.27351934.1.jpg");
+}
+#root > main > section > article > div:nth-child(3) {
+  background-image: url("https://noonoo-images.studiouniversal.net/info/tv/84777/hlmbe736EuN4JP7NM1NjvQgn53I.jpg");
+  position: relative;
+  top: 50px;
+}
+#root > main > section > article > div:nth-child(4) {
+  background-image: url("https://blog.kakaocdn.net/dn/bITzc8/btqOzAtbJRE/LHeDEKnBrON4H5M7yVmla1/img.jpg");
+}
+#root > main > section > article > div:nth-child(5) {
+  background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjRfMTI3/MDAxNTc3MTU0MTY1NzU0.aoV9JbcG3lFGV5kxe1MBzuIB40MjK30pEuRxNlXRCRgg.mfyo8weZf6eLwliScB3NNFvmDwXD39gMWddtviHdJOQg.JPEG.hjy24090/%EB%84%B7%ED%94%84%EB%A6%AD%EC%8A%A4-%ED%8C%90%ED%83%80%EC%A7%80%EB%93%9C%EB%9D%BC%EB%A7%88-%EC%9C%84%EC%B3%90-The_Witcher-%EC%8B%9C%EC%A6%8C1_(4).jpg?type=w800");
+  position: relative;
+  bottom: 50px;
+}
+#root > main > section > article > div:nth-child(6) {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNu5i2HQJCbN9m5yOgLFd36GNd-H4i8cc2wLqF07jblOmeVtHE989FLQWLBeXPMYDQuE&usqp=CAU");
+  position: relative;
+  top: 50px;
+}
+#root > main > section > article > div:nth-child(7) {
+  background-image: url("https://thumb.mt.co.kr/06/2021/06/2021060416171654420_2.jpg/dims/optimize/");
+}
+#root > main > section > article > div:nth-child(8) {
+  background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDhfMjM3/MDAxNTk2ODc3NjAyODcx.q-YLr8gSLUl_AQR1IBI05GoN4uuUvWQEbx36B0izw9wg.e1EGKaFQPCWUIvNwkWJtgKxBr4fexMVriXd-M8GQLHIg.JPEG.dkssk715/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM__V1_.jpg?type=w800");
+  position: relative;
+  bottom: 50px;
+}/*# sourceMappingURL=netflix.css.map */
