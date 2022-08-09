@@ -1,0 +1,272 @@
+*{margin:0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
+$col-black:#122023;
+$col-begie:#FFF7E1;
+$col-white:#F7F9FA;
+$col-green:#19CE60;
+$col-gray:#DAE1E6;
+/*색상 변수 선언 & 할당*/
+
+@mixin wid-height($wid,$hg){
+  width: $wid;
+  height: $hg;
+}
+
+@mixin wid-height-backcolor($wid,$hg,$bgc) {
+  width: $wid;
+  height: $hg;
+  background-color: $bgc;  
+}
+/*넓이 , 높이 , 배경색 Mixin으로 묶어서 선언 & 할당*/
+
+@mixin dp-set($display,$justify,$align){
+display: $display;
+justify-content: $justify;
+align-items: $align;
+}
+
+@mixin dp-set2($display,$justify,$align,$direction){
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  }
+/*display 설정 선언 & 할당*/
+@mixin position-bottom($position,$bot){
+  position: $position;
+  bottom: $bot;
+}
+@mixin position-left($position,$left){
+  position: $position;
+  left: $left;
+}
+
+/*포지션 설정 선언 & 할당*/
+@mixin font-set($fontSize,$col) {
+  font-size: $fontSize;
+  color:$col;
+}
+/*폰트 설정 선언 & 할당*/
+
+input{
+  @include wid-height-backcolor(290px,32px ,$col-gray );
+  border: none; 
+  color: $col-white;
+  border-radius: 5px;}
+
+
+
+input:focus{outline: none;}
+
+#root{
+  @include wid-height-backcolor(100vw,100vh ,rgba(25, 206, 96, 0.2) );  
+  display: flex;
+  align-items: center;
+  /*전체적인 화면 크기 설정*/
+
+
+  
+  & > div:nth-child(1){ /*여기서부터 왼쪽사이드바 작업*/
+    @include wid-height-backcolor(100px,inherit ,$col-green );
+    @include dp-set2(flex,flex-end ,center,column );     
+      
+    & > div{      
+
+      @include position-bottom(absolute,200px); 
+      
+      & > div{
+        @include wid-height-backcolor(30px,30px ,$col-begie );        
+        margin: 10px;
+      }
+
+    }
+
+  }
+  /*왼쪽 사이드바 끝 */
+
+
+
+  /*가운데 로그인 창 작업*/
+  & > div:nth-child(2){
+    @include wid-height(500px,550px );
+    @include dp-set(flex,flex-start,flex-end);
+    flex-direction: column;
+    @include position-left(absolute,300px);
+
+    /*WAVER & happy박스 작업*/
+    & > div:nth-child(1){
+      @include wid-height(230px,40px);
+      @include dp-set(flex,space-around ,center );
+      margin-bottom: 20px;
+      & > h1{        
+        @include font-set(32px,$col-green);
+        font-weight: 800;        
+      }
+      & > div:nth-child(2){
+        @include wid-height-backcolor(60px,20px ,$col-green);
+        @include font-set(10px,$col-white );
+        border-radius: 8px;
+        text-align: center;
+        padding: 3px;
+      }
+    }
+    /*WAVER & happy박스 작업 끝*/
+
+    /*메인 로그인 창 화면 박스 작업 시작*/
+    & > div:nth-child(2){
+      @include wid-height-backcolor(486px,280px ,$col-white );
+      & > div:nth-child(1){
+        @include wid-height(486px,52px);
+        @include dp-set2(flex,center ,center ,row );
+        text-align: center;
+        line-height: 50px;
+        & > div:nth-child(1){
+          @include wid-height-backcolor(243px,inherit ,$col-green);
+          @include font-set(10px,$col-white );
+        }
+        & > div:nth-child(2){
+          @include wid-height-backcolor(243px,inherit ,$col-gray);
+          @include font-set(10px,$col-black );
+        }
+      }
+      & > div:nth-child(2){
+        @include dp-set2(flex,center ,center ,column ); 
+        margin-top: 50px;
+        
+        & > input{        
+          &::placeholder{
+          color: $col-white;
+          padding-left: 15px;
+        }
+      }
+      }
+      & > div:nth-child(3){
+        @include dp-set(flex,center ,center);
+        margin: 7px;
+        & > input{
+          &::placeholder{
+            color: $col-white;
+            padding-left: 15px;
+          }
+        }
+      }
+      & > div:nth-child(4){
+        @include wid-height(80px,10px);
+        @include font-set(8px,$col-green );
+        @include position-left(absolute,320px );
+      }
+      & > div:nth-child(5){        
+        @include dp-set(flex,center ,center );
+        position: relative;
+        top:20px;
+        right:50px;
+        border-radius: 5px;
+        
+        & > div:nth-child(1){    
+          @include wid-height-backcolor(190px,36px ,$col-green );       
+          color: $col-white;
+          text-align: center;
+          line-height: 35px;
+          border-radius: 5px;          
+        }
+      }
+      & > div:nth-child(6){
+        @include dp-set(flex,center ,center);
+        @include position-left(absolute,310px );
+
+        & > p{
+          @include font-set(8px,$col-black );
+          margin-right: 5px;
+        }
+        & > div:nth-child(2){
+          @include wid-height-backcolor(40px,14px,$col-green);
+          @include dp-set(flex,center ,center );          
+          border-radius: 8px;
+
+          & > div:nth-child(1){
+            @include wid-height-backcolor(10px,10px ,$col-white );
+            @include position-left(absolute,80px);
+            border-radius: 50%;
+
+            
+          }
+        }
+
+      }
+    }
+    & > div:nth-child(3){
+      @include dp-set2(flex,center ,center ,column );
+      @include position-bottom(absolute,0 );
+
+      & > div:nth-child(1){
+        @include wid-height-backcolor(486px,60px ,$col-green );
+        border-radius: 5px;
+        @include dp-set(flex,space-around ,center );
+
+        & > div:nth-child(1){
+          @include font-set(12px,$col-white );
+          font-weight: 600; 
+        }
+        & > div:nth-child(2){
+          @include font-set(12px,$col-white );
+          @include dp-set(flex,space-between ,center );
+          & > div:nth-child(2){
+            @include wid-height-backcolor(8px,8px ,$col-white );
+            margin:5px;
+          }
+        }
+        & > div:nth-child(3){
+          @include dp-set2(flex,center ,flex-start,column);
+          
+          
+          & > div:nth-child(1){
+            @include wid-height-backcolor(25px,3px,$col-white );
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(38px,3px,$col-white );
+            margin: 5px 0px;
+          }
+          & > div:nth-child(3){
+            @include wid-height-backcolor(30px,3px,$col-white );
+          }
+        }
+      }
+      & > div:nth-child(2){
+        @include wid-height-backcolor(486px,60px ,$col-white );
+        margin-top: 50px;
+        border-radius: 5px;
+        @include dp-set(flex,space-around ,center );
+
+        & > div:nth-child(1){
+          @include font-set(12px,$col-black );
+          font-weight: 600; 
+        }
+
+        & > div:nth-child(2){
+          @include font-set(10px,$col-black );
+          font-weight: 400; 
+          }
+        & > div:nth-child(3){
+          @include dp-set2(flex,center ,flex-start,column);
+          
+          
+          & > div:nth-child(1){
+            @include wid-height-backcolor(38px,3px,$col-green );
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(20px,3px,$col-green );
+            margin: 5px 0px;
+          }
+          & > div:nth-child(3){
+            @include wid-height-backcolor(38px,3px,$col-green );
+          }
+        }  
+
+
+      }
+    }
+
+
+  }
+}
+
+
