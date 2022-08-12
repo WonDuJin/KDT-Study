@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  
+  
+  
+  
+
+  <script>
+    let members = [ '피카츄', '라이츄', '파이리', '꼬부기', '버터풀', '야도란', '피죤투', '또가스'];
+
+    console.dir(window.document.body.children[0].children);
+
+    let list = window.document.body.children[0].children;
+
+    
+    let dis = document.getElementsByTagName("div");
+
+    console.log(dis);
+
+    for(let i = 0; i < dis.length; i++){
+        dis[i].style.display="flex";
+        dis[i].style.alignItems="center";
+        dis[i].style.justifyContent="center";
+        dis[i].style.flexDirection="row";
+        dis[i].style.flexWrap="warp";
+        dis[i].style.width="100vw";
+        dis[i].style.height="100vh";
+            }   
+    
+
+  
+
+    let poket = document.querySelectorAll("section");
+
+    poket.forEach((poket, i) =>{poket.innerHTML = members[i]});
+
+    
+
+    for(i = 0; i < list.length; i++){
+      list[i].style.width = "200px";
+      list[i].style.height = "200px";
+      list[i].style.backgroundColor = "gray";
+      list[i].style.margin = "10px";
+      list[i].style.textAlign = "center";
+      list[i].style.flexWrap = "warp";
+      
+    }   
+
+
+
+    
+    
+    
+  </script>
+
+</body>
+
+
+</html>

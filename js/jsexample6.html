@@ -7,19 +7,21 @@
   <title>Document</title>
 </head>
 <body>
-  <script>
-    var obj = {
-      name : "joncena",
-      age : 30,
-      passed : true,
-      getinfo: function(){
-        return this.name + ',' + this.age;
-      },
-    };
 
-    console.log(obj.name, obj.age, obj.passed);
-    console.log(obj.getinfo());
+  <script>
+
+    let rsp = ['가위','바위','보'];
+
+    function getRockScissorPapperValue(){
+      let i = Math.floor(3 * Math.random());
+
+      alert(rsp[i]);
+    }
+
+    getRockScissorPapperValue();
+
 
   </script>
+  
 </body>
 </html>
