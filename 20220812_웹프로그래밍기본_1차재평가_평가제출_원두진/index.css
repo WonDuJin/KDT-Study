@@ -24,288 +24,1697 @@ input:focus {
   outline: none;
 }
 
-#root {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(25, 206, 96, 0.2);
-  display: flex;
-  align-items: center;
-  /*전체적인 화면 크기 설정*/
-  /*왼쪽 사이드바 끝 */
-  /*가운데 로그인 창 작업*/
+/* PC 화면 작업*/
+@media (min-width: 1025px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(25, 206, 96, 0.2);
+    display: flex;
+    align-items: center;
+    /*전체적인 화면 크기 설정 PC ver.*/
+    /*왼쪽 사이드바 끝 PC ver.*/
+    /* 사이드 바와 분리하여 사용한 전체적인 큰 틀 PC ver. */
+  }
+  #root > div:nth-child(1) { /*여기서부터 왼쪽사이드바 작업. PC ver.*/
+    width: 100px;
+    height: inherit;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(1) > div {
+    position: absolute;
+    bottom: 200px;
+  }
+  #root > div:nth-child(1) > div > div {
+    width: 30px;
+    height: 30px;
+    background-color: #FFF7E1;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /*가운데 로그인 창 작업 PC ver.*/
+    /* 뉴스 창 작업 시작 PC ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) {
+    width: 500px;
+    height: 550px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    left: 300px;
+    border-radius: 5px;
+    /*WAVER & happy박스 작업 PC ver.*/
+    /*WAVER & happy박스 작업 PC ver. 끝*/
+    /*메인 로그인 창 화면 박스 작업 시작 PC ver.*/
+    /* 증시 & 날씨 PC ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 230px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1 {
+    font-size: 32px;
+    color: #19CE60;
+    font-weight: 800;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    width: 60px;
+    height: 20px;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    border-radius: 8px;
+    text-align: center;
+    padding: 3px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 486px;
+    height: 280px;
+    background-color: #F7F9FA;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1019607843);
+    /* 로그인 틀 박스 PC ver.*/
+    /*ID로그인 & 일회용 번호 PC ver.*/
+    /* ID 로그인 & 일회용 번호 PC ver. 끝*/
+    /* ID & Password 입력창 PC ver. 시작*/
+    /* ID 입력창 PC ver.*/
+    /*Password 입력창 PC ver.*/
+    /* ID & Password 입력창 PC ver. 끝*/
+    /*Forgotpassword? PC ver. */
+    /*Forgotpassword? PC ver. 끝 */
+    /* 녹색바탕 로그인 박스 PC ver. */
+    /* 녹색바탕 로그인 박스 PC ver.끝*/
+    /* IP Security PC ver. 시작 */
+    /* IP Security PC ver.끝 */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 486px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    line-height: 50px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 243px;
+    height: inherit;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    border-radius: 5px 0px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 243px;
+    height: inherit;
+    background-color: #DAE1E6;
+    font-size: 10px;
+    color: #122023;
+    border-radius: 0px 5px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) {
+    width: 100px;
+    height: 10px;
+    font-size: 8px;
+    color: #19CE60;
+    position: absolute;
+    left: 320px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    right: 50px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) {
+    width: 190px;
+    height: 36px;
+    background-color: #19CE60;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 310px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > p {
+    font-size: 8px;
+    color: #122023;
+    margin-right: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) {
+    width: 40px;
+    height: 14px;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    background-color: #F7F9FA;
+    position: absolute;
+    left: 80px;
+    border-radius: 50%;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    /* 증시 & 날씨 배경용 틀 PC ver.*/
+    /* 증시 PC ver. */
+    /* 증시 끝 PC ver. */
+    /* 날씨 PC ver.*/
+    /* 날씨 끝 PC ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 486px;
+    height: 60px;
+    background-color: #19CE60;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+    font-size: 12px;
+    color: #F7F9FA;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
+    font-size: 10px;
+    color: #F7F9FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    background-color: #F7F9FA;
+    margin: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 25px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 38px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+    margin: 5px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    width: 30px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 486px;
+    height: 60px;
+    background-color: #F7F9FA;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+    font-size: 10px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 20px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+    margin: 5px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) {
+    width: 486px;
+    height: 420px;
+    position: fixed;
+    top: 400px;
+    left: 900px;
+    /* 뉴스 창 작업 배경 틀*/
+    /*뉴스 창 아래 바닥글 부분 */
+    /*바닥글 부분 끝 PC ver.*/
+    /*뉴스창 메인 부분 PC ver.*/
+    /* 뉴스 창 끝 PC ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    width: 486px;
+    height: 230px;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    position: absolute;
+    top: 300px;
+    text-align: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    position: relative;
+    top: 145px;
+    margin: 10px;
+    /* Creator h1 부분 PC ver.*/
+    /*초록색 타원 PC ver.*/
+    /* 크리에이터, SME 풀케어, 네이버 개발자 센터 PC ver.*/
+    /* 스쿨 비지니스 PC ver.*/
+    /* 스토어 개설 PC ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(2) {
+    font-size: 12px;
+    color: #122023;
+    margin: 10px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    margin: 10px 0px;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    margin: 10px 0px;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    font-size: 8px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    margin: 10px 0px;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) {
+    width: 87px;
+    height: 20px;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+    font-size: 8px;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    position: relative;
+    top: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 486px;
+    height: 385px;
+    background-color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h1 {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+    position: relative;
+    right: 200px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 428px;
+    height: 167px;
+    background-color: #19CE60;
+    font-size: 48px;
+    color: #F7F9FA;
+    text-align: center;
+    padding: 50px;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 12px;
+    height: 12px;
+    background-color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 12px;
+    height: 12px;
+    background-color: #DAE1E6;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    background-color: #DAE1E6;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+    right: 60px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h2:nth-child(1) {
+    font-size: 16px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h3:nth-child(2) {
+    font-size: 16px;
+    color: #37A0F4;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > span:nth-child(1) {
+    color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) {
+    width: 430px;
+    height: 113px;
+    font-size: 10px;
+    color: #122023;
+    position: relative;
+    top: 10px;
+  }
 }
-#root > div:nth-child(1) { /*여기서부터 왼쪽사이드바 작업*/
-  width: 100px;
-  height: inherit;
-  background-color: #19CE60;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
+/* 태블릿 Ver. */
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (min-width: 529px) and (max-width: 1024px) {
+  #root {
+    width: 100vw;
+    height: 1366px;
+    background-color: #F7F9FA;
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    /*전체적인 화면 크기 설정 태블릿 Ver.*/
+    /*왼쪽 사이드바 태블릿 Ver.끝 */
+    /* 사이드 바를 제외한 전체적인 배경 틀 태블릿 Ver. */
+  }
+  #root > div:nth-child(1) { /*여기서부터 왼쪽사이드바 작업 태블릿 Ver.*/
+    width: 100px;
+    height: inherit;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(1) > div {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(1) > div > div {
+    width: 15px;
+    height: 15px;
+    background-color: #FFF7E1;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) {
+    width: 100vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*가운데 로그인 창 작업 태블릿 Ver.*/
+    /* 뉴스창 배경용 틀 태블릿 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) {
+    width: 500px;
+    height: 550px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 300px;
+    top: 50px;
+    /*WAVER & happy박스 작업 태블릿 Ver.*/
+    /*WAVER & happy박스 작업 태블릿 Ver. 끝*/
+    /*메인 로그인 창 화면 박스 작업 태블릿 Ver.시작*/
+    /* 증시 & 날씨 태블릿 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 230px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1 {
+    font-size: 32px;
+    color: #19CE60;
+    font-weight: 800;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    width: 60px;
+    height: 20px;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    border-radius: 8px;
+    text-align: center;
+    padding: 3px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 486px;
+    height: 280px;
+    background-color: #F7F9FA;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1019607843);
+    border-radius: 5px;
+    /*로그인창 배경용 박스 태블릿 Ver.*/
+    /*ID로그인 & 일회용 번호 태블릿 Ver.*/
+    /* ID 로그인 & 일회용 번호 태블릿 Ver. 끝*/
+    /* ID & Password 태블릿 Ver.입력창*/
+    /* ID 입력창 태블릿 Ver.*/
+    /*Password 입력창 태블릿 Ver.*/
+    /* ID & Password 입력창 태블릿 Ver. 끝*/
+    /*Forgotpassword? 태블릿 Ver. */
+    /*Forgotpassword? 태블릿 Ver. 끝 */
+    /* 녹색바탕 로그인 박스 태블릿 Ver. */
+    /* 녹색바탕 로그인 박스 태블릿 Ver. 끝*/
+    /* IP Security 태블릿 Ver.*/
+    /* IP Security 태블릿 Ver. 끝 */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 486px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 243px;
+    height: inherit;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    border-radius: 5px 0px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 243px;
+    height: inherit;
+    background-color: #DAE1E6;
+    font-size: 10px;
+    color: #122023;
+    border-radius: 0px 5px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) {
+    width: 100px;
+    height: 10px;
+    font-size: 8px;
+    color: #19CE60;
+    position: absolute;
+    left: 320px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    right: 50px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) {
+    width: 190px;
+    height: 36px;
+    background-color: #19CE60;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 310px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > p {
+    font-size: 8px;
+    color: #122023;
+    margin-right: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) {
+    width: 40px;
+    height: 14px;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    background-color: #F7F9FA;
+    position: absolute;
+    left: 80px;
+    border-radius: 50%;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    /* 증시&날씨 배경용 틀 태블릿 Ver. */
+    /* 증시 태블릿 Ver.시작 */
+    /* 증시 끝 태블릿 Ver. */
+    /* 날씨 태블릿 Ver. 시작*/
+    /* 날씨 태블릿 Ver. 끝 */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 486px;
+    height: 60px;
+    background-color: #19CE60;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+    font-size: 12px;
+    color: #F7F9FA;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
+    font-size: 10px;
+    color: #F7F9FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    background-color: #F7F9FA;
+    margin: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 25px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 38px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+    margin: 5px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    width: 30px;
+    height: 3px;
+    background-color: #F7F9FA;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 486px;
+    height: 60px;
+    background-color: #F7F9FA;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+    font-size: 10px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 20px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+    margin: 5px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) {
+    width: 486px;
+    height: 420px;
+    display: flex;
+    position: relative;
+    top: 150px;
+    /* 뉴스창 바닥글 부분 태블릿 Ver. 시작*/
+    /* 뉴스 창 메인 부분 태블릿 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    width: 486px;
+    height: 230px;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    position: absolute;
+    top: 300px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    top: 160px;
+    text-align: center;
+    /* 녹색 타원 태블릿 Ver.*/
+    /* 크리에이터 속성 태블릿 Ver.*/
+    /* 스쿨 비지니스 태블릿 Ver. */
+    /*스토어 개설 태블릿 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 20px;
+    position: relative;
+    bottom: 10px;
+    /* Creators 부분 태블릿 Ver.*/
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(2) {
+    font-size: 12px;
+    color: #122023;
+    margin: 10px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 7px;
+    left: 30px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+    margin: 10px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 7px;
+    left: 50px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    margin: 10px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 7px;
+    left: 90px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    margin: 10px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) {
+    width: 87px;
+    height: 20px;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+    font-size: 8px;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 7px;
+    left: 120px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    position: relative;
+    top: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 486px;
+    height: 385px;
+    background-color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h1 {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+    position: relative;
+    right: 200px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 428px;
+    height: 167px;
+    background-color: #19CE60;
+    font-size: 48px;
+    color: #F7F9FA;
+    text-align: center;
+    padding: 50px;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 12px;
+    height: 12px;
+    background-color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 12px;
+    height: 12px;
+    background-color: #DAE1E6;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    background-color: #DAE1E6;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+    right: 60px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h2:nth-child(1) {
+    font-size: 16px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h3:nth-child(2) {
+    font-size: 16px;
+    color: #37A0F4;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > span:nth-child(1) {
+    color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) {
+    width: 430px;
+    height: 113px;
+    font-size: 10px;
+    color: #122023;
+    position: relative;
+    top: 10px;
+  }
 }
-#root > div:nth-child(1) > div {
-  position: absolute;
-  bottom: 200px;
-}
-#root > div:nth-child(1) > div > div {
-  width: 30px;
-  height: 30px;
-  background-color: #FFF7E1;
-  margin: 10px;
-}
-#root > div:nth-child(2) {
-  width: 500px;
-  height: 550px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  flex-direction: column;
-  position: absolute;
-  left: 300px;
-  /*WAVER & happy박스 작업*/
-  /*WAVER & happy박스 작업 끝*/
-  /*메인 로그인 창 화면 박스 작업 시작*/
-}
-#root > div:nth-child(2) > div:nth-child(1) {
-  width: 230px;
-  height: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20px;
-}
-#root > div:nth-child(2) > div:nth-child(1) > h1 {
-  font-size: 32px;
-  color: #19CE60;
-  font-weight: 800;
-}
-#root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
-  width: 60px;
-  height: 20px;
-  background-color: #19CE60;
-  font-size: 10px;
-  color: #F7F9FA;
-  border-radius: 8px;
-  text-align: center;
-  padding: 3px;
-}
-#root > div:nth-child(2) > div:nth-child(2) {
-  width: 486px;
-  height: 280px;
-  background-color: #F7F9FA;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
-  width: 486px;
-  height: 52px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  text-align: center;
-  line-height: 50px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-  width: 243px;
-  height: inherit;
-  background-color: #19CE60;
-  font-size: 10px;
-  color: #F7F9FA;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
-  width: 243px;
-  height: inherit;
-  background-color: #DAE1E6;
-  font-size: 10px;
-  color: #122023;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 50px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input::-moz-placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:-ms-input-placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input::placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 7px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > input::-moz-placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > input:-ms-input-placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > input::placeholder {
-  color: #F7F9FA;
-  padding-left: 15px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
-  width: 80px;
-  height: 10px;
-  font-size: 8px;
-  color: #19CE60;
-  position: absolute;
-  left: 320px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 20px;
-  right: 50px;
-  border-radius: 5px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) {
-  width: 190px;
-  height: 36px;
-  background-color: #19CE60;
-  color: #F7F9FA;
-  text-align: center;
-  line-height: 35px;
-  border-radius: 5px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 310px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) > p {
-  font-size: 8px;
-  color: #122023;
-  margin-right: 5px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) {
-  width: 40px;
-  height: 14px;
-  background-color: #19CE60;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-}
-#root > div:nth-child(2) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) {
-  width: 10px;
-  height: 10px;
-  background-color: #F7F9FA;
-  position: absolute;
-  left: 80px;
-  border-radius: 50%;
-}
-#root > div:nth-child(2) > div:nth-child(3) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
-  bottom: 0;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
-  width: 486px;
-  height: 60px;
-  background-color: #19CE60;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
-  font-size: 12px;
-  color: #F7F9FA;
-  font-weight: 600;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
-  font-size: 12px;
-  color: #F7F9FA;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
-  width: 8px;
-  height: 8px;
-  background-color: #F7F9FA;
-  margin: 5px;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
-  width: 25px;
-  height: 3px;
-  background-color: #F7F9FA;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
-  width: 38px;
-  height: 3px;
-  background-color: #F7F9FA;
-  margin: 5px 0px;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
-  width: 30px;
-  height: 3px;
-  background-color: #F7F9FA;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
-  width: 486px;
-  height: 60px;
-  background-color: #F7F9FA;
-  margin-top: 50px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
-  font-size: 12px;
-  color: #122023;
-  font-weight: 600;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
-  font-size: 10px;
-  color: #122023;
-  font-weight: 400;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
-  width: 38px;
-  height: 3px;
-  background-color: #19CE60;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
-  width: 20px;
-  height: 3px;
-  background-color: #19CE60;
-  margin: 5px 0px;
-}
-#root > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
-  width: 38px;
-  height: 3px;
-  background-color: #19CE60;
+/*모바일 Ver. */
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (max-width: 528px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F7F9FA;
+    display: flex;
+    align-items: center;
+    /*전체적인 화면 크기 설정 모바일 Ver.*/
+    /*왼쪽 사이드바 모바일 Ver. 끝 */
+    /* 사이드 바를 제외한 전체적인 배경 모바일 Ver.*/
+  }
+  #root > div:nth-child(1) { /*여기서부터 왼쪽사이드바 작업 모바일 Ver.*/
+    width: 40px;
+    height: inherit;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(1) > div {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 120px;
+  }
+  #root > div:nth-child(1) > div > div {
+    width: 15px;
+    height: 15px;
+    background-color: #FFF7E1;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*가운데 로그인 창 작업 모바일 Ver.*/
+    /* 뉴스창 작업 시작 모바일 Ver.*/
+  }
+  #root > div:nth-child(2) > div:nth-child(1) {
+    width: 500px;
+    height: 550px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    /*WAVER & happy박스 작업 모바일 Ver.*/
+    /*WAVER & happy박스 작업 모바일 Ver. 끝*/
+    /*메인 로그인 창 화면 박스 작업 모바일 Ver.시작*/
+    /* 증시 & 날씨 모바일 Ver.*/
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 230px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    left: 50px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1 {
+    font-size: 32px;
+    color: #19CE60;
+    font-weight: 800;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    width: 60px;
+    height: 20px;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    position: relative;
+    left: 20px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 3px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 326px;
+    height: 190px;
+    background-color: #F7F9FA;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1019607843);
+    border-radius: 5px;
+    /*큰 틀 박스*/
+    /*ID로그인 & 일회용 번호 모바일 Ver.*/
+    /* ID 로그인 & 일회용 번호 모바일 Ver. 끝*/
+    /* ID & Password 모바일 Ver.입력창*/
+    /* ID 입력창 모바일 Ver.*/
+    /*Password 모바일 Ver. 입력창*/
+    /* ID & Password 입력창 모바일 Ver. 끝*/
+    /*Forgotpassword?  모바일 Ver.*/
+    /*Forgotpassword? 모바일 Ver. 끝 */
+    /* 녹색바탕 로그인 박스 */
+    /* 녹색바탕 로그인 박스 모바일 Ver. 끝*/
+    /* IP Security 모바일 Ver.*/
+    /* IP Security 모바일 Ver. 끝 */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 326px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    width: 163px;
+    height: inherit;
+    background-color: #19CE60;
+    font-size: 10px;
+    color: #F7F9FA;
+    border-radius: 5px 0px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    width: 163px;
+    height: inherit;
+    background-color: #DAE1E6;
+    font-size: 10px;
+    color: #122023;
+    border-radius: 0px 5px 0px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::-moz-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input:-ms-input-placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > input::placeholder {
+    color: #F7F9FA;
+    padding-left: 15px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) {
+    width: 100px;
+    height: 10px;
+    font-size: 8px;
+    color: #19CE60;
+    position: absolute;
+    left: 320px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    right: 50px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) {
+    width: 190px;
+    height: 36px;
+    background-color: #19CE60;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 310px;
+    top: 220px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > p {
+    font-size: 8px;
+    color: #122023;
+    margin-right: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) {
+    width: 40px;
+    height: 14px;
+    background-color: #19CE60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    background-color: #F7F9FA;
+    position: absolute;
+    left: 80px;
+    border-radius: 50%;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 증시 & 날씨 전체적인 배경 틍 모바일 Ver. */
+    /* 증시 모바일 Ver. */
+    /* 증시 모바일 Ver. 끝 */
+    /* 날씨 모바일 Ver.*/
+    /* 날씨 모바일 Ver. 끝 */
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 326px;
+    height: 60px;
+    background-color: #F7F9FA;
+    margin-top: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
+    font-size: 10px;
+    color: #122023;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    background-color: #19CE60;
+    margin: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    width: 25px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    margin: 5px 0px;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    width: 30px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    width: 326px;
+    height: 60px;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+    position: absolute;
+    top: 345px;
+    left: 100px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+    font-size: 10px;
+    color: #122023;
+    font-weight: 400;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 20px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+    margin: 5px 0px;
+  }
+  #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 38px;
+    height: 3px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) {
+    width: 326px;
+    height: 420px;
+    display: flex;
+    position: relative;
+    top: 250px;
+    text-align: center;
+    /*뉴스창 메인 화면 모바일 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+    width: 326px;
+    height: 230px;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    position: absolute;
+    top: 180px;
+    box-shadow: 6px 12px 24px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    top: 160px;
+    margin: 10px;
+    /* Creators 부분 모바일 Ver. */
+    /*녹색 타원 모바일 Ver. */
+    /*크리에이터 속성 모바일 Ver. */
+    /* 스쿨비지니스 모바일 Ver. */
+    /* 스토어 개설 모바일 Ver. */
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(2) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h1:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+    width: 4px;
+    height: 14px;
+    background-color: #19CE60;
+    border-radius: 2.5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-direction: column;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) {
+    width: 87px;
+    height: 20px;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+    font-size: 8px;
+    color: #F7F9FA;
+    text-align: center;
+    line-height: 20px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(2) {
+    font-size: 8px;
+    color: #122023;
+    margin-top: 12px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 326px;
+    height: 300px;
+    background-color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1019607843);
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h1 {
+    font-size: 12px;
+    color: #122023;
+    font-weight: 600;
+    position: relative;
+    right: 130px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    width: 287px;
+    height: 127px;
+    background-color: #19CE60;
+    font-size: 48px;
+    color: #F7F9FA;
+    text-align: center;
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+    right: 120px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    background-color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    background-color: #DAE1E6;
+    margin: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(3) {
+    width: 8px;
+    height: 8px;
+    background-color: #DAE1E6;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h2:nth-child(1) {
+    font-size: 16px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > h3:nth-child(2) {
+    font-size: 16px;
+    color: #37A0F4;
+    margin: 5px;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) {
+    font-size: 12px;
+    color: #122023;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(3) > span:nth-child(1) {
+    color: #19CE60;
+  }
+  #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) {
+    width: 290px;
+    height: 76px;
+    font-size: 10px;
+    color: #122023;
+    text-align: justify;
+    position: relative;
+    top: 10px;
+  }
 }/*# sourceMappingURL=index.css.map */
