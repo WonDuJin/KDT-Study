@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {margin: 0; padding: 0; box-sizing: border-box;}
+    ul {margin: 0; padding: 0; list-style-type: none;}
+    body > div{
+      width: 100vw;
+      min-height: 100vh;
+      background-color: #333;
+    }
+    body > div > header{
+      width: inherit;
+      height: 10vh;
+      background-color: #222;
+    }    
+    body > div > main{
+      height: 50vh;
+      background-color: #ccc;
+    }
+    body > div > main > section{
+      width: 90vw;
+      height: 30vh;
+      border: 1px dashed #000;
+    }
+
+    body > div > footer {
+      height: 20vh;
+      background-color: cadetblue;
+    }
+
+    .main aside, article{
+      width: 30vw;
+      height: inherit;
+      display: inline-block;
+    }
+    .box li{
+      width: 200px;
+      height: 50px;
+      background-color: #aaa;
+      display: inline-block;
+    }
+    
+  </style>
+</head>
+<body>
+  <div>
+    <header class="box">
+      <nav>
+        <ul>
+          <li>menu-1</li>
+          <li>menu-2</li>
+          <li>menu-3</li>
+          <li>menu-3</li>
+          <li>menu-4</li>
+          <li>menu-5</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main">
+        <aside style="background-color: #fff;">this is aside</aside>
+        <article style="background-color: salmon; color: #fff;">this is article</article>
+      </section>
+    </main>
+    <footer></footer>
+  </div>
+</body>
+</html>
