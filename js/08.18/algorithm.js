@@ -91,4 +91,4 @@ function developer(who){
   return "job";
 
 }
-developer("너");
+developer("너의");
