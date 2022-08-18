@@ -23,7 +23,7 @@ function three(parameter) {
 
   console.log(typeof parameter);
 
-  //"KDT"의 타입이 
+  //"KDT"의 타입이 스트링이므로 호출의 인수인 "KDT"입력받았으니 당연히 데이터 타입또한 같다.
   
   
 }
@@ -38,9 +38,12 @@ function four(param) {
   if (param === "KDT") {
 
     console.log("K-digital training");
+
+    //four("KDT")를 호출하여 인수를 입력했으므로 매개변수는 "KDT"가 되므로 참 이므로 결과값또한 참의 결과값이 나옴
   } else{
 
     console.log("한컴타자놀이");
+    //four("공욱재미남")이 인수로 들어가면 조건문이 거짓이므로 거짓의 값이 출력
   }
 
 
@@ -60,7 +63,8 @@ function five(paramOne, paramTwo) {
   // 위에 먼저 선언된 함수 a(), b()을 덧셈하여 나온값을
   // 콘솔에 출력되게끔 '알고리즘'을 작성하세요.
   let plus = paramOne + paramTwo;
-  //지역변수 활용!
+  //지역변수 활용하여 함수에 선언된 값 a(10), b(20)의 값을 합쳐서 출력
+
 
   console.log(plus);
   
@@ -87,4 +91,4 @@ function developer(who){
   return "job";
 
 }
-developer("내");
+developer("너");
