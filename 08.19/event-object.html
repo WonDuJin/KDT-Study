@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li>menus-1</li>
+      <li>menus-2</li>
+      <li>menus-3</li>
+      <li>menus-4</li>
+      <li>menus-5</li>
+      <li>menus-6</li>
+      <li>menus-7</li>
+      <li>menus-8</li>
+      <li>menus-9</li>
+      <li>menus-10</li>
+      <li>menus-11</li>
+      <li>menus-12</li>
+      <li>menus-13</li>
+      <li>menus-14</li>
+      <li>menus-15</li>
+      <li id="test">menus-16</li>
+      <li>menus-17</li>
+      <li>menus-18</li>
+      <li>menus-19</li>
+      <li>menus-20</li>
+      <li>menus-21</li>
+      <li>menus-22</li>
+      <li>menus-23</li>
+      <li>menus-24</li>
+      <li>menus-25</li>
+      <li>menus-26</li>
+      <li>menus-27</li>
+      <li>menus-28</li>
+    </ul>
+  </div>
+  <script>
+    const liItems = document.querySelectorAll("#root > ul >li");
+    console.log(liItems);
+
+    const container = document.getElementsByTagName("ul")[0];
+    console.log(container);
+
+
+
+
+
+    /*let colorData = "gray"
+    container.addEventListener("click",function(event){
+      
+      event.target.style.backgroundColor = "gray";
+
+    });*/
+
+    
+
+    function jongin(containerElement, operateColor,eventType){
+
+      if(typeof(containerElement)==="object"){
+
+        if(typeof(operateColor)==="string"){
+
+          if(typeof(eventType)==="string"){           
+            
+            let colorData = operateColor;        
+            containerElement.addEventListener(eventType,function(event){
+              event.target.style.backgroundColor = colorData;
+            });
+          }else{
+
+            console.log("event값이 잘못됐습니다");
+          }
+        }else{
+
+        console.log ("color값이 잘못됐습니다");
+        }
+      }else {
+
+        console.log("container의 값이 잘못됐습니다.");
+      } 
+
+    }
+    jongin(container, "gray","click");
+
+
+    /*const root = document.getElementById("root");
+    console.log(root);
+    root.style.width = window.document.body.clientWidth/2;
+    root.style.height = window.document.body.clientHeight;
+    root.style.border = "1px solid red";
+
+    root.addEventListener("mousemove",function(event){
+      
+      console.log("현재 마우스의 가로 위치는" + event.pageX + "px 입니다.");
+      console.log("현재 마우스의 세로 위치는" + event.pageY + "px 입니다.");
+
+    })*/
+    
+  /*  console.log (window.document.body.clientWidth);
+    console.log (window.document.body.clientHeight);*/
+    
+
+  </script>
+</body>
+</html>
