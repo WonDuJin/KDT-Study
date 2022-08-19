@@ -41,8 +41,7 @@
       <li></li>
       <li></li>
       <li></li>
-    </ul>
-    <button>event</button>
+    </ul>    
   </div>
   <script>
 
@@ -79,19 +78,21 @@
     }
     
     
+    
+    
+    
     const container = document.querySelectorAll("#root > ul");
-
-    let containerLength = container.length;
-    console.log(container);
-    for( let i = 0; i <containerLength; i++){
+      console.log(container);
+      for(let i = 0; i <container;i++){
 
         container[i].addEventListner("click" , function(event){
-        console.log(event);
-        event.target.style.backgroundColor = "#333"
-        event.target.style.color = "#ccc";
-      });
-    }
-      
+          console.log(event);
+          event.target.style.backgroundColor = "#333"
+          event.target.style.color = "#ccc";
+        });
+      }
+        
+    
   
   
   </script>
