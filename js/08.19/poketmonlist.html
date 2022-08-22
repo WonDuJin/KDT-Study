@@ -942,7 +942,8 @@
         count ++;
       }
     }
-    console.log("3글자인 포켓몬은 총" + count + "마리입니다.");*/
+    console.log("3글자인 포켓몬은 총" + count + "마리입니다.");
+
       
     for (let i = 0; i < poketmonList.length; i++){
 
@@ -951,7 +952,84 @@
         count ++;
       }
     }
-    console.log("고로 끝나는 포켓몬은 총" + count + "마리입니다.");
+    console.log("고로 끝나는 포켓몬은 총" + count + "마리입니다.");*/
+
+
+    /*let setUlTag = document.createElement("ul");
+
+    setUlTag.id = "question4";
+
+    setUlTag.style.width = "100vw";
+    setUlTag.style.display = "flex";
+    setUlTag.style.justifyContent = "center";
+    setUlTag.style.alignItems = "center";
+    setUlTag.style.flexWrap = "wrap";
+    setUlTag.style.listStyle = "none";
+    setUlTag.style.margin = "0px";
+    setUlTag.style.padding = "0px";
+    setUlTag.style.textAlign = "center";
+
+    document.body.appendChild(setUlTag);
+
+    for (let i = 0; i < poketmonList.length; i++){
+
+      if( i >= 300 && i <=350){
+
+        let setLiTag = document.createElement("li");
+        setLiTag.style.width = "300px";
+        setLiTag.style.height = "100px";
+        setLiTag.style.margin = "10px";
+        setLiTag.style.backgroundColor = "#ccc";
+        setLiTag.textContent = i + "번 포켓몬스터 " + poketmonList[i].textContent;
+        setUlTag.appendChild(setLiTag);
+        
+      }
+    }*/
+
+    let nameLengthArray=[];
+    let nameLengthCount = 0;
+
+    for( let i = 0; i < poketmonList.length; i++){
+      if(poketmonList[i].textContent.length > nameLengthCount){
+        nameLengthCount = poketmonList[i].textContent.length;
+      }
+    }
+    console.log(nameLengthCount);
+    /* 방법 1*/
+
+
+    nameLengthArray.length = nameLengthCount;
+    console.log(nameLengthArray);
+
+    for(let i = 0; i <nameLengthArray.length; i++){
+      nameLengthArray[i] =[];
+    }
+
+    console.log(nameLengthArray);
+    /*방법2*/
+
+    for(let i = 0; i <nameLengthArray.length; i++){
+
+      let innerIndex = 0;
+      console.log(nameLengthArray[i]);
+      
+      for(let j = 0; j <poketmonList.length; j++){
+
+        if(poketmonList[j].textContent.length-1 === i){
+
+          nameLengthArray[i][innerIndex] = poketmonList[j].textContent;
+          innerIndex ++;
+        }
+      }
+    }
+    /*방법 3*/
+
+    for(let i = 0; i <nameLengthArray.length; i++){
+      console.log(i+1 + "글자 이름을 가진 포켓몬스터는 총 " + nameLengthArray[i].length + "개 있습니다.");
+    }
+
+
+
 
 
   </script>

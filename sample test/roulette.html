@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML Roulette</title>
+        <style></style>
+    </head>
+    <style>
+		body {          
+			width: 100%; 
+      height: 100vh; 
+			background: skyblue; 
+			overflow : hidden;
+		}	
+		.container {
+			display: grid;
+			min-height: 100%;
+			align-content: center;
+			justify-content: center;
+		}
+		
+		#roullete {
+			width: 400px;
+			height: 400px;
+			border-radius: 50%;
+			background: white;
+			border: 3px solid black;
+			position: relative;
+		}
+		
+		.panel {
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			border-radius: 50%;
+			-webkit-clip-path: polygon(0% 0%, 50% 50%, 0% 50%, 0% 0%);
+			clip-path: polygon(0% 0%, 50% 50%, 0% 50%, 0% 0%);
+		}
+		
+		.txt {
+			font-size: 24px;
+			width: 260px;
+			height: 260px;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			text-align: center;
+			transform: rotate(-67deg);
+		}
+		
+		
+		
+    
+		
+		.btnArea {
+      float: right;
+    }
+    .btnArea input {
+      background-color: #1aa2c0;
+			border: none;
+      height: 32px;
+      line-height: 1;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #ffffff
+    }
+		.show-popup { 
+			opacity: 1; 
+			z-index:5;
+			visibility: visible; 
+			transform: scale(1.0); 
+			transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; 
+		}		
+		.arrow{    
+			left: 50%;
+      position: sticky;
+      z-index: 1;
+			width: 0;
+			height: 0;
+			border-top: 30px solid purple;/* 화살표 */
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+		}		
+    </style>
+    <script type="text/javascript">
+
+		window.onload = function(){
+			initRoulette();
+		}
+		
+    function initRoulette(){
+        setRoulettePanel();
+        initAddPop();
+
+        document.getElementById("roullete").addEventListener("animationstart", function(e) {
+            console.log("시작");
+            }, false);
+
+          document.getElementById("roullete").addEventListener("animationend", function(e) {
+            console.log("종료");
+            }, false);
+        }
+      
+      function triggerAddPop(){
+        document.querySelector(".popup").classList.toggle("show-popup");
+      }    	
+      function setRoulettePanel(){
+        var panelArr =  document.querySelectorAll(".panel")
+        let panelArrSize = panelArr.length;
+        let rotate = 360 / panelArrSize;
+
+        var i = 0
+        var panelRotate = 0;
+        var panelInfoTbody = [];
+        while ( i < panelArrSize){
+          panelRotate = panelRotate + rotate; 
+          panelArr[i].style.transform = "rotate("+panelRotate+"deg)";
+          i = i + 1;
+          panelInfoTbody.push("<tr><td id=\"panelInfo"+i+"\" style=\"background:"+panelArr[i-1].style.background+"; color:"+panelArr[i-1].style.color+"\">"+panelArr[i-1].innerText+"</td>");
+            panelInfoTbody.push("<td><button onclick=\"openUpdatePop('"+i+"');\">수정</button></td></tr>");
+        }
+        panelInfoTbody.push("<tr><td colspan=\"2\"><button class=\"addBtn\" onclick=\"openAddPop('add');\">ADD</button></td></tr>");
+        document.getElementById("panelInfoTbody").innerHTML = panelInfoTbody.join('');
+      }
+    
+    
+    function clickStartBtn() {
+      document.getElementById("roullete").style.animation = "";
+    		var randomRotate = (Math.random() * 3000) + 1000;
+    		var randomAnimation = (Math.random() * 7000) + 2000;
+
+    		//document.getElementById("roullete").style.animation = "rotation 7s forwards ease-in-out";
+        document.getElementById("roullete").animate([
+          { transform: "rotate(0deg)" },{ transform: "rotate("+randomRotate + "deg)" }
+        ], 
+        {
+          fill: 'forwards',
+          duration: randomAnimation,
+          easing: 'ease-in-out'
+        }
+        );
+		}
+    </script>
+    
+    <body>
+      <div class="container"> 
+        <header class="header">
+          <h1 class="title">Roulette</h1>
+        </header>
+        <div class="arrow"></div>
+        <div class="eq8" id="roullete">
+          <div class="panel panel_1" style="background: #00D8FF;"><strong class="txt">1</strong></div>
+          <div class="panel panel_2" style="background: #F2CB61;"><strong class="txt">2</strong></div>
+          <div class="panel panel_3" style="background: #FAECC5;"><strong class="txt">3</strong></div>
+          <div class="panel panel_4" style="background: #665C00;"><strong class="txt">4</strong></div>
+          <div class="panel panel_5" style="background: #476600;"><strong class="txt">5</strong></div>
+          <div class="panel panel_6" style="background: #2F9D27;"><strong class="txt">6</strong></div>
+          <div class="panel panel_7" style="background: #003399;"><strong class="txt">7</strong></div>
+          <div class="panel panel_8" style="background: #6B66FF;"><strong class="txt">8</strong></div>
+        </div>
+			<button class="startBtn" onclick="clickStartBtn();">start</button>
+    </div>
+    </body>
+</html>
