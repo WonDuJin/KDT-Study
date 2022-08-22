@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body id="root">
+    <button id="button">click</button>
+
+    <div id="english">
+      <p>if all you have a hammer, everything looks like a nail</p>
+    </div>
+
+    <div id = "korean">
+      <p>가진것이 망치뿐이면, 모든 것이 못으로 보인다.</p>
+    </div>
+
+
+    <script>
+      console.log(document.getElementById("root"));
+      let bodySet=document.getElementById("root");
+      
+      bodySet.style.margin = 0;
+      bodySet.style.padding = 0;
+      bodySet.style.boxSizing = "borderBox";
+      bodySet.style.width = "100vw";
+      bodySet.style.height = "100vh";
+      bodySet.style.display = "flex";
+      bodySet.style.justifyContent = "center";
+      bodySet.style.alignItems = "center";
+      
+
+      
+
+      console.log(document.querySelector("#button"));
+      let clickButton = document.querySelector("#button");
+
+      clickButton.style.backgroundColor = "#333"
+      clickButton.style.width = "52px";
+      clickButton.style.height = "52px";
+      clickButton.style.borderRadius = "50%";
+      clickButton.style.color = "#fff"
+      clickButton.style.position = "absolute";
+
+      console.log(document.getElementById("english"));
+      let englishTag =document.getElementById("english");
+      englishTag.style.position = "absolute";
+      englishTag.style.visibility = "hidden";
+      
+
+      console.log(document.getElementById("korean"));
+      let koreanTag = document.getElementById("korean");
+      koreanTag.style.position = "absolute";
+      koreanTag.style.display = "none";
+
+      let isSwitch = true;
+
+      clickButton.addEventListener("click",function(){
+
+        if(isSwitch === true){
+
+          isSwitch = false;
+          englishTag.style.visibility = "visible";
+          englishTag.style.transform = "translate(-70%)"
+          englishTag.style.transitionProperty = "transform";
+          englishTag.style.transitionDuration = "5s";
+          englishTag.style.transitionTimingFunction = "linear";
+          
+          clickButton.style.visibility = "hidden";
+
+          
+
+          englishTag.addEventListener("click",function(){
+
+            
+            if(isSwitch === false){
+              
+              isSwitch = true;
+              englishTag.style.visibility = "hidden";
+              koreanTag.style.display = "flex";
+              bodySet.style.backgroundImage = "none";
+
+              koreanTag.addEventListener("click",function(){
+              
+                if(isSwitch=== true){
+                  koreanTag.style.display = "none";
+                  clickButton.style.visibility = "visible";                  
+                }
+              })              
+            }
+          })
+        }
+      })
+
+
+
+    </script>
+  
+</body>
+</html>
