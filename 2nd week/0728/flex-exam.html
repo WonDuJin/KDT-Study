@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {box-sizing: border-box;}
+
+    
+    main {
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      
+      display: flex;
+      justify-content: center; /* (부모너비 - 자식너비) / 2 */
+      align-items: center;
+    }
+    main > section{
+      width: 400px;
+      height: 400px;
+      border: 1px solid red;
+
+      display: flex;
+      justify-content: center; /* (부모너비 - 자식너비) / 2 */
+      align-items: center;
+    }
+
+    .dp-flex{display: flex;}
+    .justify-content-center {justify-content: center;}
+    .justify-content-right {justify-content: right;}
+    .align-items-center{align-items: center;}
+
+  </style>
+</head>
+<body>
+  <main class="dp-flex justify-content-center align-items-center">
+    <section class="dp-flex justify-content-right align-items-center">
+      <article>hello</article>
+    </section>
+
+  </main>
+  
+</body>
+</html>
