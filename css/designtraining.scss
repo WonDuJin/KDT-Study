@@ -39,8 +39,6 @@ $gray : #808080;
   padding:0 20px;
 }
 
-
-
 #root{
   @include whb(100vw,100vh ,$black );
   @include display-set(flex,center ,center);
