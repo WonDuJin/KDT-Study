@@ -1,0 +1,1435 @@
+
+*{margin:0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
+$col-black:#122023;
+$col-begie:#FFF7E1;
+$col-white:#F7F9FA;
+$col-green:#19CE60;
+$col-gray:#DAE1E6;
+/*색상 변수 선언 & 할당*/
+
+@mixin wid-height($wid,$hg){
+  width: $wid;
+  height: $hg;
+}
+
+@mixin wid-height-backcolor($wid,$hg,$bgc) {
+  width: $wid;
+  height: $hg;
+  background-color: $bgc;  
+}
+/*넓이 , 높이 , 배경색 Mixin으로 묶어서 선언 & 할당*/
+
+@mixin dp-set($display,$justify,$align){
+display: $display;
+justify-content: $justify;
+align-items: $align;
+}
+
+@mixin dp-set2($display,$justify,$align,$direction){
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  }
+/*display 설정 선언 & 할당*/
+@mixin position-bottom($position,$bot){
+  position: $position;
+  bottom: $bot;
+}
+@mixin position-left($position,$left){
+  position: $position;
+  left: $left;
+}
+
+/*포지션 설정 선언 & 할당*/
+@mixin font-set($fontSize,$col) {
+  font-size: $fontSize;
+  color:$col;
+}
+/*폰트 설정 선언 & 할당*/
+
+input{
+  @include wid-height-backcolor(290px,32px ,$col-gray );
+  border: none; 
+  color: $col-white;
+  border-radius: 5px;}
+
+
+
+input:focus{outline: none;}
+
+  
+/* PC 화면 작업*/
+@media (min-width:1025px) {
+#root{
+  @include wid-height-backcolor(100vw,100vh ,rgba(25, 206, 96, 0.2) );  
+  display: flex;
+  align-items: center;
+  /*전체적인 화면 크기 설정 PC ver.*/
+
+
+  
+  & > div:nth-child(1){ /*여기서부터 왼쪽사이드바 작업. PC ver.*/
+    @include wid-height-backcolor(100px,inherit ,$col-green );
+    @include dp-set2(flex,flex-end ,center,column );     
+      
+    & > div{      
+      @include position-bottom(absolute,200px); 
+      
+      & > div{
+        @include wid-height-backcolor(30px,30px ,$col-begie );        
+        margin: 10px;
+        }
+      }
+    } /*왼쪽 사이드바 끝 PC ver.*/
+
+
+    /* 사이드 바와 분리하여 사용한 전체적인 큰 틀 PC ver. */
+  & > div:nth-child(2) {
+    @include wid-height(100vw,100vh);
+    @include dp-set2(flex,center ,center,row );
+
+    /*가운데 로그인 창 작업 PC ver.*/
+    & > div:nth-child(1){
+      @include wid-height(500px,550px );
+      @include dp-set2(flex,flex-start,flex-end,column);      
+      @include position-left(absolute,300px);
+      border-radius: 5px;
+
+      /*WAVER & happy박스 작업 PC ver.*/
+      & > div:nth-child(1){
+        @include wid-height(230px,40px);
+        @include dp-set(flex,space-around ,center );
+        margin-bottom: 20px;
+        & > h1{        
+          @include font-set(32px,$col-green);
+          font-weight: 800;        
+        }
+        & > div:nth-child(2){
+          @include wid-height-backcolor(60px,20px ,$col-green);
+          @include font-set(10px,$col-white );
+          border-radius: 8px;
+          text-align: center;
+          padding: 3px;
+        }
+      }
+      /*WAVER & happy박스 작업 PC ver. 끝*/
+
+    
+      /*메인 로그인 창 화면 박스 작업 시작 PC ver.*/
+      & > div:nth-child(2){
+        @include wid-height-backcolor(486px,280px ,$col-white );
+        box-shadow: 6px 12px 24px #0000001A;
+        /* 로그인 틀 박스 PC ver.*/
+        
+        /*ID로그인 & 일회용 번호 PC ver.*/
+        & > div:nth-child(1){
+          @include wid-height(486px,52px);
+          @include dp-set2(flex,center ,center ,row );
+          text-align: center;
+          line-height: 50px;
+          & > div:nth-child(1){
+            @include wid-height-backcolor(243px,inherit ,$col-green);
+            @include font-set(10px,$col-white );
+            border-radius: 5px 0px 0px 0px;
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(243px,inherit ,$col-gray);
+            @include font-set(10px,$col-black );
+            border-radius: 0px 5px 0px 0px;
+          }
+        }/* ID 로그인 & 일회용 번호 PC ver. 끝*/
+        
+        /* ID & Password 입력창 PC ver. 시작*/
+        & > div:nth-child(2){
+          @include dp-set2(flex,center ,center ,column ); 
+          margin-top: 50px;
+          
+          & > input{        
+            &::placeholder{
+            color: $col-white;
+            padding-left: 15px;
+            }
+          }
+        } /* ID 입력창 PC ver.*/
+
+
+        & > div:nth-child(3){
+          @include dp-set(flex,center ,center);
+          margin: 7px;
+          & > input{
+            &::placeholder{
+              color: $col-white;
+              padding-left: 15px;
+            }
+          }
+        }/*Password 입력창 PC ver.*/
+
+
+        /* ID & Password 입력창 PC ver. 끝*/
+
+        /*Forgotpassword? PC ver. */
+        & > div:nth-child(4){
+          @include wid-height(100px,10px);
+          @include font-set(8px,$col-green );
+          @include position-left(absolute,320px );
+        } /*Forgotpassword? PC ver. 끝 */
+
+        /* 녹색바탕 로그인 박스 PC ver. */
+        & > div:nth-child(5){        
+          @include dp-set(flex,center ,center );
+          position: relative;
+          top:20px;
+          right:50px;
+          border-radius: 5px;
+          
+          & > div:nth-child(1){    
+            @include wid-height-backcolor(190px,36px ,$col-green );       
+            color: $col-white;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 5px;          
+          }
+        } /* 녹색바탕 로그인 박스 PC ver.끝*/
+
+        /* IP Security PC ver. 시작 */
+        & > div:nth-child(6){
+          @include dp-set(flex,center ,center);
+          @include position-left(absolute,310px );
+
+          & > p{
+            @include font-set(8px,$col-black );
+            margin-right: 5px;
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(40px,14px,$col-green);
+            @include dp-set(flex,center ,center );          
+            border-radius: 8px;
+
+            & > div:nth-child(1){
+              @include wid-height-backcolor(10px,10px ,$col-white );
+              @include position-left(absolute,80px);
+              border-radius: 50%;            
+              }
+            }
+          } /* IP Security PC ver.끝 */
+        }
+
+      /* 증시 & 날씨 PC ver. */
+      & > div:nth-child(3){
+        @include dp-set2(flex,center ,center ,column );
+        @include position-bottom(absolute,0 );
+        
+        /* 증시 & 날씨 배경용 틀 PC ver.*/
+
+
+        /* 증시 PC ver. */
+
+        & > div:nth-child(1){
+          @include wid-height-backcolor(486px,60px ,$col-green );
+          border-radius: 5px;
+          @include dp-set(flex,space-around ,center );
+          box-shadow: 6px 12px 24px 0px #0000001A;
+
+          & > div:nth-child(1){
+            @include font-set(12px,$col-white );
+            font-weight: 600; 
+          }
+          & > div:nth-child(2){
+            @include font-set(10px,$col-white );
+            @include dp-set(flex,space-between ,center );
+            & > div:nth-child(2){
+              @include wid-height-backcolor(8px,8px ,$col-white );
+              margin:5px;
+            }
+          }
+          & > div:nth-child(3){
+            @include dp-set2(flex,center ,flex-start,column);            
+            
+            
+            & > div:nth-child(1){
+              @include wid-height-backcolor(25px,3px,$col-white );
+              border-radius: 2.5px;
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(38px,3px,$col-white );
+              border-radius: 2.5px;
+              margin: 5px 0px;
+            }
+            & > div:nth-child(3){
+              @include wid-height-backcolor(30px,3px,$col-white );
+              border-radius: 2.5px;
+            }
+          }
+        }/* 증시 끝 PC ver. */
+
+        /* 날씨 PC ver.*/
+
+        & > div:nth-child(2){
+          @include wid-height-backcolor(486px,60px ,$col-white );
+          margin-top: 50px;
+          border-radius: 5px;
+          box-shadow: 6px 12px 24px 0px #0000001A;
+          @include dp-set(flex,space-around ,center );
+
+          & > div:nth-child(1){
+            @include font-set(12px,$col-black );
+            font-weight: 600; 
+          }
+
+          & > div:nth-child(2){
+            @include font-set(10px,$col-black );
+            font-weight: 400; 
+            }
+          & > div:nth-child(3){
+            @include dp-set2(flex,center ,flex-start,column);            
+            
+            & > div:nth-child(1){
+              @include wid-height-backcolor(38px,3px,$col-green );
+              border-radius: 2.5px;
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(20px,3px,$col-green );
+              border-radius: 2.5px;
+              margin: 5px 0px;
+            }
+            & > div:nth-child(3){
+              @include wid-height-backcolor(38px,3px,$col-green );
+              border-radius: 2.5px;
+            }
+          } 
+        }  /* 날씨 끝 PC ver. */
+      }
+    }
+
+    /* 뉴스 창 작업 시작 PC ver. */
+    & > div:nth-child(2){
+      @include wid-height(486px,420px);  
+      position: fixed;
+      top: 400px;
+      left: 900px;
+      /* 뉴스 창 작업 배경 틀*/
+
+      
+      /*뉴스 창 아래 바닥글 부분 */
+      & > div:nth-child(1){
+        @include wid-height-backcolor(486px,230px ,$col-white );
+        border-radius: 5px;
+        position: absolute;
+        top: 300px;
+        text-align: center;
+        & > div:nth-child(1){
+          @include dp-set2(flex,space-around ,flex-start,row );
+          position:relative;
+          top: 145px;
+          margin: 10px;
+
+          /* Creator h1 부분 PC ver.*/
+          & > div:nth-child(1){
+            @include dp-set2(flex,center , flex-start,column );
+            margin-left: 5px;
+            
+
+            & > h1:nth-child(1){
+              @include font-set(12px,$col-black );
+              
+            }
+            & > h1:nth-child(2){
+              @include font-set(12px,$col-black );
+              margin: 10px 0px;
+              
+            }
+            & > h1:nth-child(3){
+              @include font-set(12px,$col-black );
+              
+            }                
+          }
+          /*초록색 타원 PC ver.*/
+          & > div:nth-child(2){
+            @include dp-set2(flex,center ,center,column );
+            
+            
+            & > div:nth-child(1){
+              @include wid-height-backcolor(4px,14px ,$col-green );
+              border-radius: 2.5px;
+              
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(4px,14px ,$col-green );
+              margin: 10px 0px;
+              border-radius: 2.5px;
+              
+            }
+            & > div:nth-child(3){
+              @include wid-height-backcolor(4px,14px ,$col-green );
+              border-radius: 2.5px;
+              
+            }                        
+          }
+          /* 크리에이터, SME 풀케어, 네이버 개발자 센터 PC ver.*/
+          & > div:nth-child(3){
+            @include dp-set2(flex,center ,center,column );
+            
+          
+            & > div:nth-child(1){
+              @include font-set(8px,$col-black );
+              font-weight: 400;
+              
+            }
+            & > div:nth-child(2){
+              @include font-set(8px,$col-black );
+              margin: 10px 0px;
+              font-weight: 400;
+            }
+            & > div:nth-child(3){
+              @include font-set(8px,$col-black );
+              font-weight: 400;
+              
+            }
+          }                   
+          /* 스쿨 비지니스 PC ver.*/
+          & > div:nth-child(4){
+            @include dp-set2(flex,center ,center,column );
+            
+
+            & > div:nth-child(1){
+              @include font-set(8px,$col-black );
+              font-weight: 400;
+              
+            }
+            & > div:nth-child(2){
+              @include font-set(8px,$col-black );
+              margin: 10px 0px;
+              font-weight: 400;
+            }
+            
+            & > div:nth-child(3){
+              @include wid-height-backcolor(87px, 20px ,$col-green );
+              border-radius: 10.5px;
+              @include font-set(8px,$col-white );
+              text-align: center;
+              line-height: 20px;
+            }
+          }
+          /* 스토어 개설 PC ver. */
+          & > div:nth-child(5){
+            @include dp-set(flex,space-around ,center );
+          
+
+            & > div:nth-child(2){
+              @include font-set(8px,$col-black );
+              position: relative;
+              top: 20px;
+              
+            }                
+          }
+        }
+      }/*바닥글 부분 끝 PC ver.*/
+
+
+      /*뉴스창 메인 부분 PC ver.*/
+      & > div:nth-child(2){
+        @include wid-height-backcolor(486px,385px ,$col-white );
+        @include dp-set2(flex,center ,center ,column );
+        border-radius: 5px;
+        position: absolute;
+        top: 50px;
+        box-shadow: 6px 12px 24px 0px #0000001A;
+        
+        & > h1{
+          @include font-set(12px,$col-black );
+          font-weight: 600;
+          position: relative;
+          right: 200px;
+          
+
+        }
+        & > div:nth-child(2){
+          @include wid-height-backcolor(428px,167px ,$col-green );
+          @include font-set(48px,$col-white );
+          text-align: center;
+          padding: 50px;
+          border-radius: 5px;
+          position: relative;
+          top: 10px;
+
+          
+          
+        }
+        & > div:nth-child(3){
+          @include dp-set2(flex,center ,center, row);
+          position: relative;
+          top: 10px;  
+
+          &  > div:nth-child(1){
+            @include wid-height-backcolor(12px,12px ,$col-green );
+          }
+          &  > div:nth-child(2){
+            @include wid-height-backcolor(12px,12px ,$col-gray );
+            margin: 10px;
+          }
+          &  > div:nth-child(3){
+            @include wid-height-backcolor(12px,12px ,$col-gray );
+          }
+          
+        }
+        & > div:nth-child(4){
+          @include dp-set2(flex,center,center,row);
+          position: relative;
+          top: 10px;
+          right: 60px;
+
+          & > h2:nth-child(1){
+            @include font-set(16px,$col-black);            
+          }
+          & > h3:nth-child(2){
+            @include font-set(16px,#37A0F4 );
+            margin: 10px;
+          }
+          & > div:nth-child(3){
+            @include font-set(12px,$col-black );
+            
+            & > span:nth-child(1){
+              color: $col-green;
+            }
+          }
+        }
+        & > div:nth-child(5){
+          @include wid-height(430px,113px );
+          @include font-set(10px,$col-black );
+          position: relative;
+          top: 10px;
+        }        
+      }/* 뉴스 창 끝 PC ver. */
+    } 
+  }
+}
+}
+
+/* 태블릿 Ver. */
+  /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (min-width: 529px) and (max-width:1024px) {
+  #root{
+    @include wid-height-backcolor(100vw,1366px,$col-white );  
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    /*전체적인 화면 크기 설정 태블릿 Ver.*/
+  
+  
+    
+    & > div:nth-child(1){ /*여기서부터 왼쪽사이드바 작업 태블릿 Ver.*/
+      @include wid-height-backcolor(100px,inherit,$col-green );
+      @include dp-set2(flex,space-around ,center,column );     
+        
+      & > div{      
+        @include wid-height(inherit,inherit );
+        @include dp-set2(flex,space-evenly ,center , column );
+        
+        & > div{
+          @include wid-height-backcolor(15px,15px ,$col-begie );
+          border-radius: 50%;        
+          margin: 10px;
+          }
+        }
+      } /*왼쪽 사이드바 태블릿 Ver.끝 */
+  
+  
+    /* 사이드 바를 제외한 전체적인 배경 틀 태블릿 Ver. */
+    & > div:nth-child(2) {
+      @include wid-height(100vw,inherit);
+      @include dp-set2(flex,center ,center,column );
+      
+      
+  
+      /*가운데 로그인 창 작업 태블릿 Ver.*/
+      & > div:nth-child(1){
+        @include wid-height(500px,550px );
+        @include dp-set(flex,flex-start,center);
+        flex-direction: column;
+        @include position-left(absolute,300px);
+        top: 50px;
+        
+  
+        /*WAVER & happy박스 작업 태블릿 Ver.*/
+        & > div:nth-child(1){
+          @include wid-height(230px,40px);
+          @include dp-set(flex,space-around ,center );
+          margin-bottom: 20px;
+          & > h1{        
+            @include font-set(32px,$col-green);
+            font-weight: 800;        
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(60px,20px ,$col-green);
+            @include font-set(10px,$col-white );
+            border-radius: 8px;
+            text-align: center;
+            padding: 3px;
+          }
+        }
+        /*WAVER & happy박스 작업 태블릿 Ver. 끝*/
+  
+      
+        /*메인 로그인 창 화면 박스 작업 태블릿 Ver.시작*/
+        & > div:nth-child(2){
+          @include wid-height-backcolor(486px,280px ,$col-white );
+          box-shadow: 6px 12px 24px #0000001A;
+          border-radius: 5px;
+          /*로그인창 배경용 박스 태블릿 Ver.*/
+          
+          /*ID로그인 & 일회용 번호 태블릿 Ver.*/
+          & > div:nth-child(1){
+            @include wid-height(486px,52px);
+            @include dp-set2(flex,center ,center ,row );
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px; 
+            & > div:nth-child(1){
+              @include wid-height-backcolor(243px,inherit ,$col-green);
+              @include font-set(10px,$col-white );
+              border-radius: 5px 0px 0px 0px;
+              
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(243px,inherit ,$col-gray);
+              @include font-set(10px,$col-black );
+              border-radius: 0px 5px 0px 0px; 
+            }
+          }/* ID 로그인 & 일회용 번호 태블릿 Ver. 끝*/
+          
+          /* ID & Password 태블릿 Ver.입력창*/
+          & > div:nth-child(2){
+            @include dp-set2(flex,center ,center ,column ); 
+            margin-top: 50px;
+            
+            & > input{        
+              &::placeholder{
+              color: $col-white;
+              padding-left: 15px;
+              }
+            }
+          } /* ID 입력창 태블릿 Ver.*/
+  
+  
+          & > div:nth-child(3){
+            @include dp-set(flex,center ,center);
+            margin: 7px;
+            & > input{
+              &::placeholder{
+                color: $col-white;
+                padding-left: 15px;
+              }
+            }
+          }/*Password 입력창 태블릿 Ver.*/
+  
+  
+          /* ID & Password 입력창 태블릿 Ver. 끝*/
+  
+          /*Forgotpassword? 태블릿 Ver. */
+          & > div:nth-child(4){
+            @include wid-height(100px,10px);
+            @include font-set(8px,$col-green );
+            @include position-left(absolute,320px );
+          } /*Forgotpassword? 태블릿 Ver. 끝 */
+  
+          /* 녹색바탕 로그인 박스 태블릿 Ver. */
+          & > div:nth-child(5){        
+            @include dp-set(flex,center ,center );
+            position: relative;
+            top:20px;
+            right:50px;
+            border-radius: 5px;
+            
+            & > div:nth-child(1){    
+              @include wid-height-backcolor(190px,36px ,$col-green );       
+              color: $col-white;
+              text-align: center;
+              line-height: 35px;
+              border-radius: 5px;          
+            }
+          } /* 녹색바탕 로그인 박스 태블릿 Ver. 끝*/
+  
+          /* IP Security 태블릿 Ver.*/
+          & > div:nth-child(6){
+            @include dp-set(flex,center ,center);
+            @include position-left(absolute,310px );
+  
+            & > p{
+              @include font-set(8px,$col-black );
+              margin-right: 5px;
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(40px,14px,$col-green);
+              @include dp-set(flex,center ,center );          
+              border-radius: 8px;
+  
+              & > div:nth-child(1){
+                @include wid-height-backcolor(10px,10px ,$col-white );
+                @include position-left(absolute,80px);
+                border-radius: 50%;            
+                }
+              }
+            } /* IP Security 태블릿 Ver. 끝 */
+          }
+  
+        /* 증시 & 날씨 태블릿 Ver. */
+        & > div:nth-child(3){
+          @include dp-set2(flex,center ,center ,column );
+          @include position-bottom(absolute,0 );
+          
+          /* 증시&날씨 배경용 틀 태블릿 Ver. */
+  
+  
+          /* 증시 태블릿 Ver.시작 */
+          & > div:nth-child(1){
+            @include wid-height-backcolor(486px,60px ,$col-green );
+            border-radius: 5px;
+            @include dp-set(flex,space-around ,center );
+            box-shadow: 6px 12px 24px 0px #0000001A;
+  
+            & > div:nth-child(1){
+              @include font-set(12px,$col-white );
+              font-weight: 600; 
+            }
+            & > div:nth-child(2){
+              @include font-set(10px,$col-white );
+              @include dp-set(flex,space-between ,center );
+              & > div:nth-child(2){
+                @include wid-height-backcolor(8px,8px ,$col-white );
+                margin:5px;
+              }
+            }
+            & > div:nth-child(3){
+              @include dp-set2(flex,center ,flex-start,column);
+              ;
+              
+              
+              & > div:nth-child(1){
+                @include wid-height-backcolor(25px,3px,$col-white );
+                border-radius: 2.5px;
+              }
+              & > div:nth-child(2){
+                @include wid-height-backcolor(38px,3px,$col-white );
+                border-radius: 2.5px;
+                margin: 5px 0px;
+              }
+              & > div:nth-child(3){
+                @include wid-height-backcolor(30px,3px,$col-white );
+                border-radius: 2.5px;
+              }
+            }
+          } /* 증시 끝 태블릿 Ver. */
+  
+          /* 날씨 태블릿 Ver. 시작*/
+          & > div:nth-child(2){
+            @include wid-height-backcolor(486px,60px ,$col-white );
+            margin-top: 50px;
+            border-radius: 5px;
+            box-shadow: 6px 12px 24px 0px #0000001A;
+            @include dp-set(flex,space-around ,center );
+  
+            & > div:nth-child(1){
+              @include font-set(12px,$col-black );
+              font-weight: 600; 
+            }
+  
+            & > div:nth-child(2){
+              @include font-set(10px,$col-black );
+              font-weight: 400; 
+              }
+            & > div:nth-child(3){
+              @include dp-set2(flex,center ,flex-start,column);
+                    
+              
+              & > div:nth-child(1){
+                @include wid-height-backcolor(38px,3px,$col-green );
+                border-radius: 2.5px;
+              }
+              & > div:nth-child(2){
+                @include wid-height-backcolor(20px,3px,$col-green );
+                border-radius: 2.5px;
+                margin: 5px 0px;
+              }
+              & > div:nth-child(3){
+                @include wid-height-backcolor(38px,3px,$col-green );
+                border-radius: 2.5px;
+              }
+            } 
+          } /* 날씨 태블릿 Ver. 끝 */
+        }
+      }
+
+      /* 뉴스창 배경용 틀 태블릿 Ver. */
+      & > div:nth-child(2){
+        @include wid-height(486px,420px);  
+        display: flex;
+        position: relative;
+        top:  150px;
+        
+        
+        
+        /* 뉴스창 바닥글 부분 태블릿 Ver. 시작*/
+        & > div:nth-child(1){
+          @include wid-height-backcolor(486px,230px ,$col-white );
+          border-radius: 5px;
+          position: absolute;
+          top: 300px;
+          box-shadow: 6px 12px 24px 0px #0000001A;
+          
+          & > div:nth-child(1){
+            @include dp-set2(flex,space-around ,flex-start,row );
+            position:absolute;
+            top: 160px;            
+            text-align: center;
+  
+            & > div:nth-child(1){
+              @include dp-set2(flex,center, flex-start,column );
+              margin-left: 20px;
+              position: relative;
+              bottom: 10px;
+              /* Creators 부분 태블릿 Ver.*/ 
+              & > h1:nth-child(1){
+                @include font-set(12px,$col-black );
+                
+              }
+              & > h1:nth-child(2){
+                @include font-set(12px,$col-black );
+                margin: 10px 0px;
+              }
+              & > h1:nth-child(3){
+                @include font-set(12px,$col-black );
+                
+              }                
+            }
+            /* 녹색 타원 태블릿 Ver.*/
+            & > div:nth-child(2){
+              @include dp-set2(flex,center ,center,column );
+              position: relative;
+              bottom: 7px;
+              left: 30px;
+              
+              & > div:nth-child(1){
+                @include wid-height-backcolor(4px,14px ,$col-green );
+                border-radius: 2.5px;
+                
+              }
+              & > div:nth-child(2){
+                @include wid-height-backcolor(4px,14px ,$col-green );
+                border-radius: 2.5px;
+                margin: 10px 0px;
+                
+                
+              }
+              & > div:nth-child(3){
+                @include wid-height-backcolor(4px,14px ,$col-green );
+                border-radius: 2.5px;
+                
+              }                        
+            }
+            /* 크리에이터 속성 태블릿 Ver.*/
+            & > div:nth-child(3){
+              @include dp-set2(flex,center ,center,column );
+              position: relative;
+              bottom: 7px;
+              left: 50px;
+            
+              & > div:nth-child(1){
+                @include font-set(8px,$col-black );
+                
+              }
+              & > div:nth-child(2){
+                @include font-set(8px,$col-black );
+                margin: 10px 0px;
+                
+              }
+              & > div:nth-child(3){
+                @include font-set(8px,$col-black );
+                
+              }
+            }
+
+            /* 스쿨 비지니스 태블릿 Ver. */
+            & > div:nth-child(4){
+              @include dp-set2(flex,center,center,column );
+              position: relative;
+              bottom: 7px;
+              left: 90px;
+
+              & > div:nth-child(1){
+                @include font-set(8px,$col-black );
+                
+              }
+              & > div:nth-child(2){
+                @include font-set(8px,$col-black );
+                margin: 10px 0px;
+                
+              }
+              
+              & > div:nth-child(3){
+                @include wid-height-backcolor(87px, 20px ,$col-green );
+                border-radius: 10.5px;
+                @include font-set(8px,$col-white );
+                text-align: center;
+                line-height: 20px;
+              }
+            }
+            /*스토어 개설 태블릿 Ver. */
+            & > div:nth-child(5){
+              @include dp-set2(flex,center,center,column );
+              position: relative;
+              bottom: 7px;
+              left: 120px;
+
+              & > div:nth-child(2){
+                @include font-set(8px,$col-black );
+                position: relative;
+                top:20px;
+                
+              }                
+            }
+          }
+          
+  
+        }
+        /* 뉴스 창 메인 부분 태블릿 Ver. */
+        & > div:nth-child(2){
+          @include wid-height-backcolor(486px,385px ,$col-white );
+          @include dp-set2(flex,center ,center ,column );
+          border-radius: 5px;
+          position: absolute;
+          top: 50px;
+          box-shadow: 6px 12px 24px 0px #0000001A;
+          
+          & > h1{
+            @include font-set(12px,$col-black );
+            font-weight: 600;
+            position: relative;
+            right: 200px;
+            
+  
+          }
+          & > div:nth-child(2){
+            @include wid-height-backcolor(428px,167px ,$col-green );
+            @include font-set(48px,$col-white );
+            text-align: center;
+            padding: 50px;
+            border-radius: 5px;
+            position: relative;
+            top: 10px;
+  
+            
+            
+          }
+          & > div:nth-child(3){
+            @include dp-set2(flex,center ,center, row);
+            position: relative;
+            top: 10px;  
+  
+            &  > div:nth-child(1){
+              @include wid-height-backcolor(12px,12px ,$col-green );
+            }
+            &  > div:nth-child(2){
+              @include wid-height-backcolor(12px,12px ,$col-gray );
+              margin: 10px;
+            }
+            &  > div:nth-child(3){
+              @include wid-height-backcolor(12px,12px ,$col-gray );
+            }
+            
+          }
+          & > div:nth-child(4){
+            @include dp-set2(flex,center,center,row);
+            position: relative;
+            top: 10px;
+            right: 60px;
+  
+            & > h2:nth-child(1){
+              @include font-set(16px,$col-black);            
+            }
+            & > h3:nth-child(2){
+              @include font-set(16px,#37A0F4 );
+              margin: 10px;
+            }
+            & > div:nth-child(3){
+              @include font-set(12px,$col-black );
+              
+              & > span:nth-child(1){
+                color: $col-green;
+              }
+            }
+          }
+          & > div:nth-child(5){
+            @include wid-height(430px,113px );
+            @include font-set(10px,$col-black );
+            position: relative;
+            top: 10px;
+          }
+          
+        }
+      } 
+    }
+  }
+  }
+  /*모바일 Ver. */
+  /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+  @media (max-width: 528px){
+    #root{
+      @include wid-height-backcolor(100vw,100vh ,$col-white );  
+      display: flex;
+      align-items: center;
+      /*전체적인 화면 크기 설정 모바일 Ver.*/
+    
+    
+      
+      & > div:nth-child(1){ /*여기서부터 왼쪽사이드바 작업 모바일 Ver.*/
+        @include wid-height-backcolor(40px,inherit ,$col-green );
+        @include dp-set2(flex,space-around ,center,column );     
+          
+        & > div{      
+          @include wid-height(inherit,inherit );
+          @include dp-set2(flex,flex-start ,center , column );
+          margin: 120px;
+          
+          & > div{
+            @include wid-height-backcolor(15px,15px ,$col-begie );
+            border-radius: 50%;        
+            margin: 10px;
+            }
+          }
+        } /*왼쪽 사이드바 모바일 Ver. 끝 */
+    
+    
+        
+        /* 사이드 바를 제외한 전체적인 배경 모바일 Ver.*/
+      & > div:nth-child(2) {
+        @include wid-height(100vw,100vh);
+        @include dp-set2(flex,center ,center,column );
+    
+        /*가운데 로그인 창 작업 모바일 Ver.*/
+        & > div:nth-child(1){
+          @include wid-height(500px,550px );
+          @include dp-set(flex,flex-start,center);
+          flex-direction: column;
+          @include position-left(absolute,0px);
+          top: 100px;
+          
+    
+          /*WAVER & happy박스 작업 모바일 Ver.*/
+          & > div:nth-child(1){
+            @include wid-height(230px,40px);
+            @include dp-set(flex,space-between ,center );
+            margin-bottom: 20px;
+            position: relative;
+            left: 50px;
+            & > h1{        
+              @include font-set(32px,$col-green);
+              font-weight: 800;
+            
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(60px,20px ,$col-green);
+              @include font-set(10px,$col-white );
+              position: relative;
+              left: 20px;
+              border-radius: 8px;
+              text-align: center;
+              padding: 3px;
+            }
+          }
+          /*WAVER & happy박스 작업 모바일 Ver. 끝*/
+    
+        
+          /*메인 로그인 창 화면 박스 작업 모바일 Ver.시작*/
+          & > div:nth-child(2){
+            @include wid-height-backcolor(326px,190px ,$col-white );
+            box-shadow: 6px 12px 24px #0000001A;
+            border-radius: 5px;
+            /*큰 틀 박스*/
+            
+            /*ID로그인 & 일회용 번호 모바일 Ver.*/
+            & > div:nth-child(1){
+              @include wid-height(326px,35px);
+              @include dp-set2(flex,center ,center ,row );
+              text-align: center;
+              line-height: 30px;
+              border-radius: 5px; 
+              & > div:nth-child(1){
+                @include wid-height-backcolor(163px,inherit ,$col-green);
+                @include font-set(10px,$col-white );
+                border-radius: 5px 0px 0px 0px;
+                
+              }
+              & > div:nth-child(2){
+                @include wid-height-backcolor(163px,inherit ,$col-gray);
+                @include font-set(10px,$col-black );
+                border-radius: 0px 5px 0px 0px; 
+              }
+            }/* ID 로그인 & 일회용 번호 모바일 Ver. 끝*/
+            
+            /* ID & Password 모바일 Ver.입력창*/
+            & > div:nth-child(2){
+              @include dp-set2(flex,center ,center ,column ); 
+              margin-top: 20px;
+              
+              & > input{        
+                &::placeholder{
+                color: $col-white;
+                padding-left: 15px;
+                }
+              }
+            } /* ID 입력창 모바일 Ver.*/
+    
+    
+            & > div:nth-child(3){
+              @include dp-set(flex,center ,center);
+              margin: 7px;
+              & > input{
+                &::placeholder{
+                  color: $col-white;
+                  padding-left: 15px;
+                }
+              }
+            }/*Password 모바일 Ver. 입력창*/
+            /* ID & Password 입력창 모바일 Ver. 끝*/
+    
+    
+    
+            /*Forgotpassword?  모바일 Ver.*/
+            & > div:nth-child(4){
+              @include wid-height(100px,10px);
+              @include font-set(8px,$col-green );
+              @include position-left(absolute,320px );
+            } /*Forgotpassword? 모바일 Ver. 끝 */
+    
+            /* 녹색바탕 로그인 박스 */
+            & > div:nth-child(5){        
+              @include dp-set(flex,center ,center );
+              position: relative;
+              top:10px;
+              right:50px;
+              border-radius: 5px;
+              
+              & > div:nth-child(1){    
+                @include wid-height-backcolor(190px,36px ,$col-green );       
+                color: $col-white;
+                text-align: center;
+                line-height: 35px;
+                border-radius: 5px;          
+              }
+            } /* 녹색바탕 로그인 박스 모바일 Ver. 끝*/
+    
+            /* IP Security 모바일 Ver.*/
+            & > div:nth-child(6){
+              @include dp-set(flex,center ,center);
+              @include position-left(absolute,310px );
+              top: 220px;
+    
+              & > p{
+                @include font-set(8px,$col-black );
+                margin-right: 5px;
+              }
+              & > div:nth-child(2){
+                @include wid-height-backcolor(40px,14px,$col-green);
+                @include dp-set(flex,center ,center );          
+                border-radius: 8px;
+    
+                & > div:nth-child(1){
+                  @include wid-height-backcolor(10px,10px ,$col-white );
+                  @include position-left(absolute,80px);
+                  border-radius: 50%;            
+                  }
+                }
+              } /* IP Security 모바일 Ver. 끝 */
+            }
+    
+          /* 증시 & 날씨 모바일 Ver.*/
+          & > div:nth-child(3){
+            @include dp-set2(flex,center ,center ,column );
+            /* 증시 & 날씨 전체적인 배경 틍 모바일 Ver. */
+            
+            
+    
+    
+            /* 증시 모바일 Ver. */
+
+            & > div:nth-child(1){
+              @include wid-height-backcolor(326px,60px ,$col-white );
+              margin-top: 50px;
+              border-radius: 5px;              
+              @include dp-set(flex,space-around ,center );
+              z-index: 1;              
+              box-shadow: 6px 12px 24px 0px #0000001A;
+              
+
+              & > div:nth-child(1){
+                @include font-set(12px,$col-black );
+                font-weight: 600; 
+              }
+              & > div:nth-child(2){
+                @include font-set(10px, $col-black );
+                @include dp-set(flex,space-between ,center );
+                & > div:nth-child(2){
+                  @include wid-height-backcolor(8px,8px ,$col-green );
+                  margin:5px;
+                }
+              }
+              & > div:nth-child(3){
+                @include dp-set2(flex,center ,flex-start,column);
+                
+                
+                
+                & > div:nth-child(1){
+                  @include wid-height-backcolor(25px,3px,$col-green );
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(2){
+                  @include wid-height-backcolor(38px,3px,$col-green );
+                  margin: 5px 0px;
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(3){
+                  @include wid-height-backcolor(30px,3px,$col-green );
+                  border-radius: 2.5px;
+                }
+              }              
+            }
+             /* 증시 모바일 Ver. 끝 */
+    
+            /* 날씨 모바일 Ver.*/
+
+            & > div:nth-child(2){
+              @include wid-height-backcolor(326px,60px ,$col-white );
+              border-radius: 5px;
+              @include dp-set(flex,space-around ,center );   
+              box-shadow: 6px 12px 24px 0px #0000001A;    
+              position: absolute;
+              top:345px;
+              left: 100px;         
+              
+              & > div:nth-child(1){
+                @include font-set(12px,$col-black );
+                font-weight: 600; 
+              }
+    
+              & > div:nth-child(2){
+                @include font-set(10px,$col-black );
+                font-weight: 400; 
+                }
+              & > div:nth-child(3){
+                @include dp-set2(flex,center ,flex-start,column);
+                
+                & > div:nth-child(1){
+                  @include wid-height-backcolor(38px,3px,$col-green );
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(2){
+                  @include wid-height-backcolor(20px,3px,$col-green );
+                  border-radius: 2.5px;
+                  margin: 5px 0px;
+                }
+                & > div:nth-child(3){
+                  @include wid-height-backcolor(38px,3px,$col-green );
+                  border-radius: 2.5px;
+                }
+              }              
+            }
+             /* 날씨 모바일 Ver. 끝 */
+          }
+        }
+
+        /* 뉴스창 작업 시작 모바일 Ver.*/
+        & > div:nth-child(2){
+          @include wid-height(326px,420px);  
+          display: flex;
+          position: relative;
+          
+          top: 250px  ; 
+          text-align: center;   
+    
+          & > div:nth-child(1){
+            @include wid-height-backcolor(326px,230px ,$col-white );
+            border-radius: 5px;
+            position: absolute;
+            top: 180px;
+            box-shadow: 6px 12px 24px 0px #0000001A;
+            & > div:nth-child(1){
+              @include dp-set2(flex,center ,flex-start,row );
+              position:absolute;
+              top: 160px;
+              margin: 10px;
+              
+              /* Creators 부분 모바일 Ver. */
+              & > div:nth-child(1){
+                @include dp-set2(flex,center ,space-around,column );
+    
+                & > h1:nth-child(1){
+                  @include font-set(12px,$col-black );
+                  
+                }
+                & > h1:nth-child(2){
+                  @include font-set(12px,$col-black );
+                  
+                }
+                & > h1:nth-child(3){
+                  @include font-set(12px,$col-black );
+                  
+                }                
+              }
+              /*녹색 타원 모바일 Ver. */
+              & > div:nth-child(2){
+                @include dp-set2(flex,center ,center,column );
+                
+                & > div:nth-child(1){
+                  @include wid-height-backcolor(4px,14px ,$col-green );
+                  border-radius: 2.5px;
+                  
+                }
+                & > div:nth-child(2){
+                  @include wid-height-backcolor(4px,14px ,$col-green );
+                  border-radius: 2.5px;
+                  
+                }
+                & > div:nth-child(3){
+                  @include wid-height-backcolor(4px,14px ,$col-green );
+                  border-radius: 2.5px;
+                  
+                }                        
+              }
+              /*크리에이터 속성 모바일 Ver. */
+              & > div:nth-child(3){
+                @include dp-set2(flex,center ,center,column );
+              
+                & > div:nth-child(1){
+                  @include font-set(8px,$col-black );
+                  
+                }
+                & > div:nth-child(2){
+                  @include font-set(8px,$col-black );
+                  
+                }
+                & > div:nth-child(3){
+                  @include font-set(8px,$col-black );
+                  
+                }
+              }             
+              /* 스쿨비지니스 모바일 Ver. */
+              & > div:nth-child(4){
+                @include dp-set2(flex,center ,space-around,column );
+
+                & > div:nth-child(1){
+                  @include font-set(8px,$col-black );
+                  
+                }
+                & > div:nth-child(2){
+                  @include font-set(8px,$col-black );
+                  
+                }
+                
+                & > div:nth-child(3){
+                  @include wid-height-backcolor(87px, 20px ,$col-green );
+                  border-radius: 10.5px;
+                  @include font-set(8px,$col-white );
+                  text-align: center;
+                  line-height: 20px;
+                }
+              }
+              /* 스토어 개설 모바일 Ver. */
+              & > div:nth-child(5){
+                @include dp-set(flex,space-around ,center );
+
+                & > div:nth-child(2){
+                  @include font-set(8px,$col-black );
+                  margin-top: 12px;
+                  
+                }                
+              }
+            } 
+            
+    
+          }
+
+          /*뉴스창 메인 화면 모바일 Ver. */
+          & > div:nth-child(2){
+            @include wid-height-backcolor(326px,300px ,$col-white );
+            @include dp-set2(flex,center ,center ,column );
+            border-radius: 5px;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            box-shadow: 6px 12px 24px #0000001A;
+            
+            & > h1{
+              @include font-set(12px,$col-black );
+              font-weight: 600;
+              position: relative;
+              right: 130px;
+              
+    
+            }
+            & > div:nth-child(2){
+              @include wid-height-backcolor(287px,127px ,$col-green );
+              @include font-set(48px,$col-white );
+              text-align: center;
+              padding: 30px;
+              border-radius: 5px;
+              position: relative;
+              top: 10px;
+    
+              
+              
+            }
+            & > div:nth-child(3){
+              @include dp-set2(flex,center ,center, row);
+              position: relative;
+              top: 10px;  
+              right: 120px;              
+    
+              &  > div:nth-child(1){
+                @include wid-height-backcolor(8px,8px ,$col-green );
+              }
+              &  > div:nth-child(2){
+                @include wid-height-backcolor(8px,8px ,$col-gray );
+                margin: 10px;
+              }
+              &  > div:nth-child(3){
+                @include wid-height-backcolor(8px,8px ,$col-gray );
+              }
+              
+            }
+            & > div:nth-child(4){
+              @include dp-set2(flex,center,center,row);
+              
+              position: relative;
+              top: 10px;
+              
+    
+              & > h2:nth-child(1){
+                @include font-set(16px,$col-black);            
+              }
+              & > h3:nth-child(2){
+                @include font-set(16px,#37A0F4 );
+                margin: 5px;
+              }
+              & > div:nth-child(3){
+                @include font-set(12px,$col-black );
+                
+                & > span:nth-child(1){
+                  color: $col-green;
+                }
+              }
+            }
+            & > div:nth-child(5){
+              @include wid-height(290px,76px );
+              @include font-set(10px,$col-black );
+              text-align: justify;
+              position: relative;
+              top: 10px;
+
+            }
+            
+          }
+        } 
+      }
+    }
+    }

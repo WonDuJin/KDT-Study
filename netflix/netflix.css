@@ -1,0 +1,428 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*색상 지정*/
+/* 높이&너비*/
+/* 포지션 설정 - 오른쪽*/
+/* 포지션 설정 - 왼쪽*/
+/* 포지션 설정 - 바텀*/
+/* 포지션 설정 - 탑*/
+/* 디스플레이 설정*/
+/*마우스 오버시 설정*/
+input {
+  border: 1px solid #333;
+  border-radius: 50px;
+  width: 20vw;
+  height: 2vh;
+  background-color: #333;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* 검색창 인풋 명령어 설정*/
+@media (max-width: 768px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://res09.bignox.com/appcenter/kr/2019/12/1567678471_3RUW6NhdBrowHs1neoJsXor9ipDdVetwWHKwNODH.jpeg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  #root > header > div {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  #root > header > div > div:nth-child(1) {
+    width: 30vw;
+    height: 3vh;
+    position: relative;
+    top: 80px;
+    left: 20px;
+  }
+  #root > header > div > div:nth-child(1) > div {
+    position: absolute;
+    top: 0px;
+    right: 80px;
+    /*백그라운드 설정 & 검색창 */
+  }
+  #root > header > div > div:nth-child(1) > div > div {
+    color: #a9a9a9;
+  }
+  #root > header > div > div:nth-child(2) {
+    width: 3vw;
+    color: #FF0000;
+    font-size: 50px;
+    font-style: italic;
+    position: relative;
+    right: 20%;
+    /*메인 중앙 로고*/
+  }
+  #root > header > div > div:nth-child(2):hover {
+    transition: all 1s ease;
+    transform: scale(1.1);
+  }
+  #root > header > div > div:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #a9a9a9;
+    margin: 20px;
+    position: relative;
+    right: 40px;
+    top: 30px;
+    background-image: url("https://github.githubassets.com/images/modules/codespaces/github-vscode-logo-light.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /*프로필 아이디*/
+  }
+  #root > header > div > div:nth-child(3) > div {
+    color: #fff;
+    position: relative;
+    top: 50px;
+    left: 0px;
+  }
+  #root > main > section > aside {
+    position: absolute;
+    top: 150px;
+    left: 140px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 150fr 150fr 150fr 150fr 150fr;
+    gap: 25px;
+    /* 왼쪽 사이드메뉴 바*/
+  }
+  #root > main > section > aside > div {
+    width: 10vw;
+    height: 6vh;
+    background-color: #333;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+  #root > main > section > article {
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    align-items: center;
+    grid-template-columns: 150fr 150fr 150fr;
+    grid-template-rows: 200fr 200fr 200fr;
+  }
+  #root > main > section > article > div {
+    width: 15vw;
+    height: 15vh;
+    background-color: #a9a9a9;
+    margin: 15px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    /*가운데 메인메뉴 바*/
+  }
+  #root > main > section > article > div:hover {
+    transition: all 1s ease;
+    transform: scale(1.25);
+  }
+  #root > main > section > article > div:nth-child(1) {
+    background-image: url("https://images.chosun.com/resizer/a5YP6FNZMLmdoSmJCXiQJcN25Fw=/540x799/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/CFCFB3LGQ75OBNIYD36LN74FHQ.jpg");
+  }
+  #root > main > section > article > div:nth-child(2) {
+    background-image: url("https://img.hankyung.com/photo/202108/01.27351934.1.jpg");
+  }
+  #root > main > section > article > div:nth-child(3) {
+    background-image: url("https://noonoo-images.studiouniversal.net/info/tv/84777/hlmbe736EuN4JP7NM1NjvQgn53I.jpg");
+  }
+  #root > main > section > article > div:nth-child(4) {
+    background-image: url("https://blog.kakaocdn.net/dn/bITzc8/btqOzAtbJRE/LHeDEKnBrON4H5M7yVmla1/img.jpg");
+  }
+  #root > main > section > article > div:nth-child(5) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjRfMTI3/MDAxNTc3MTU0MTY1NzU0.aoV9JbcG3lFGV5kxe1MBzuIB40MjK30pEuRxNlXRCRgg.mfyo8weZf6eLwliScB3NNFvmDwXD39gMWddtviHdJOQg.JPEG.hjy24090/%EB%84%B7%ED%94%84%EB%A6%AD%EC%8A%A4-%ED%8C%90%ED%83%80%EC%A7%80%EB%93%9C%EB%9D%BC%EB%A7%88-%EC%9C%84%EC%B3%90-The_Witcher-%EC%8B%9C%EC%A6%8C1_(4).jpg?type=w800");
+  }
+  #root > main > section > article > div:nth-child(6) {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNu5i2HQJCbN9m5yOgLFd36GNd-H4i8cc2wLqF07jblOmeVtHE989FLQWLBeXPMYDQuE&usqp=CAU");
+  }
+  #root > main > section > article > div:nth-child(7) {
+    background-image: url("https://thumb.mt.co.kr/06/2021/06/2021060416171654420_2.jpg/dims/optimize/");
+    position: relative;
+    left: 70px;
+  }
+  #root > main > section > article > div:nth-child(8) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDhfMjM3/MDAxNTk2ODc3NjAyODcx.q-YLr8gSLUl_AQR1IBI05GoN4uuUvWQEbx36B0izw9wg.e1EGKaFQPCWUIvNwkWJtgKxBr4fexMVriXd-M8GQLHIg.JPEG.dkssk715/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM__V1_.jpg?type=w800");
+    position: relative;
+    left: 70px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://res09.bignox.com/appcenter/kr/2019/12/1567678471_3RUW6NhdBrowHs1neoJsXor9ipDdVetwWHKwNODH.jpeg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  #root > header > div {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  #root > header > div > div:nth-child(1) {
+    width: 30vw;
+    height: 3vh;
+    position: relative;
+    top: 80px;
+    left: 20px;
+  }
+  #root > header > div > div:nth-child(1) > div {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    /*백그라운드 설정 & 검색창 */
+  }
+  #root > header > div > div:nth-child(1) > div > div {
+    color: #a9a9a9;
+  }
+  #root > header > div > div:nth-child(2) {
+    width: 3vw;
+    color: #FF0000;
+    font-size: 50px;
+    font-style: italic;
+    position: relative;
+    right: 17%;
+    /*메인 중앙 로고*/
+  }
+  #root > header > div > div:nth-child(2):hover {
+    transition: all 1s ease;
+    transform: scale(1.1);
+  }
+  #root > header > div > div:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #a9a9a9;
+    margin: 20px;
+    position: relative;
+    right: 40px;
+    top: 30px;
+    background-image: url("https://github.githubassets.com/images/modules/codespaces/github-vscode-logo-light.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /*프로필 아이디*/
+  }
+  #root > header > div > div:nth-child(3) > div {
+    color: #fff;
+    position: relative;
+    top: 50px;
+    left: 0px;
+  }
+  #root > main > section > aside {
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 150fr 150fr 150fr 150fr 150fr;
+    gap: 50px;
+    /* 왼쪽 사이드메뉴 바*/
+  }
+  #root > main > section > aside > div {
+    width: 10vw;
+    height: 2vh;
+    background-color: #333;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+  }
+  #root > main > section > article {
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top: 250px;
+    left: 160px;
+    align-items: center;
+    grid-template-columns: 170fr 170fr 170fr 170fr;
+    grid-template-rows: 200fr 200fr 200fr 200fr;
+  }
+  #root > main > section > article > div {
+    width: 15vw;
+    height: 15vh;
+    background-color: #a9a9a9;
+    margin: 15px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /*가운데 메인메뉴 바*/
+  }
+  #root > main > section > article > div:hover {
+    transition: all 1s ease;
+    transform: scale(1.25);
+  }
+  #root > main > section > article > div:nth-child(1) {
+    background-image: url("https://images.chosun.com/resizer/a5YP6FNZMLmdoSmJCXiQJcN25Fw=/540x799/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/CFCFB3LGQ75OBNIYD36LN74FHQ.jpg");
+  }
+  #root > main > section > article > div:nth-child(2) {
+    background-image: url("https://img.hankyung.com/photo/202108/01.27351934.1.jpg");
+  }
+  #root > main > section > article > div:nth-child(3) {
+    background-image: url("https://noonoo-images.studiouniversal.net/info/tv/84777/hlmbe736EuN4JP7NM1NjvQgn53I.jpg");
+  }
+  #root > main > section > article > div:nth-child(4) {
+    background-image: url("https://blog.kakaocdn.net/dn/bITzc8/btqOzAtbJRE/LHeDEKnBrON4H5M7yVmla1/img.jpg");
+  }
+  #root > main > section > article > div:nth-child(5) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjRfMTI3/MDAxNTc3MTU0MTY1NzU0.aoV9JbcG3lFGV5kxe1MBzuIB40MjK30pEuRxNlXRCRgg.mfyo8weZf6eLwliScB3NNFvmDwXD39gMWddtviHdJOQg.JPEG.hjy24090/%EB%84%B7%ED%94%84%EB%A6%AD%EC%8A%A4-%ED%8C%90%ED%83%80%EC%A7%80%EB%93%9C%EB%9D%BC%EB%A7%88-%EC%9C%84%EC%B3%90-The_Witcher-%EC%8B%9C%EC%A6%8C1_(4).jpg?type=w800");
+  }
+  #root > main > section > article > div:nth-child(6) {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNu5i2HQJCbN9m5yOgLFd36GNd-H4i8cc2wLqF07jblOmeVtHE989FLQWLBeXPMYDQuE&usqp=CAU");
+  }
+  #root > main > section > article > div:nth-child(7) {
+    background-image: url("https://thumb.mt.co.kr/06/2021/06/2021060416171654420_2.jpg/dims/optimize/");
+  }
+  #root > main > section > article > div:nth-child(8) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDhfMjM3/MDAxNTk2ODc3NjAyODcx.q-YLr8gSLUl_AQR1IBI05GoN4uuUvWQEbx36B0izw9wg.e1EGKaFQPCWUIvNwkWJtgKxBr4fexMVriXd-M8GQLHIg.JPEG.dkssk715/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM__V1_.jpg?type=w800");
+  }
+}
+@media (min-width: 1025px) {
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://res09.bignox.com/appcenter/kr/2019/12/1567678471_3RUW6NhdBrowHs1neoJsXor9ipDdVetwWHKwNODH.jpeg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    /*<body> 설정*/
+  }
+  #root > header > div {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  #root > header > div > div:nth-child(1) {
+    width: 30vw;
+    height: 3vh;
+    position: relative;
+    top: 30px;
+    left: 20px;
+  }
+  #root > header > div > div:nth-child(1) > div {
+    position: absolute;
+    top: 0px;
+    right: 195px;
+  }
+  #root > header > div > div:nth-child(1) > div > div {
+    color: #a9a9a9;
+  }
+  #root > header > div > div:nth-child(2) {
+    width: 3vw;
+    color: #FF0000;
+    font-size: 50px;
+    font-style: italic;
+    position: relative;
+    right: 15%;
+  }
+  #root > header > div > div:nth-child(2):hover {
+    transition: all 1s ease;
+    transform: scale(1.1);
+  }
+  #root > header > div > div:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #a9a9a9;
+    margin: 20px;
+    position: relative;
+    right: 200px;
+    background-image: url("https://github.githubassets.com/images/modules/codespaces/github-vscode-logo-light.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #root > header > div > div:nth-child(3) > div {
+    color: #fff;
+    position: relative;
+    top: 11px;
+    left: 60px;
+  }
+  #root > main > section > aside {
+    position: absolute;
+    top: 300px;
+    left: 30px;
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    grid-template-rows: 150fr 150fr 150fr 150fr 150fr;
+  }
+  #root > main > section > aside > div {
+    width: 10vw;
+    height: 2vh;
+    background-color: #333;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+  }
+  #root > main > section > article {
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top: 200px;
+    left: 330px;
+    grid-template-columns: 150fr 150fr 150fr 150fr 150fr 150fr 150fr 150fr 150fr;
+  }
+  #root > main > section > article > div {
+    width: 7vw;
+    height: 50vh;
+    background-color: #a9a9a9;
+    margin: 15px;
+    background-size: 9vw 50vh;
+    background-repeat: no-repeat;
+  }
+  #root > main > section > article > div:hover {
+    transition: all 1s ease;
+    transform: scale(1.25);
+  }
+  #root > main > section > article > div:nth-child(1) {
+    background-image: url("https://images.chosun.com/resizer/a5YP6FNZMLmdoSmJCXiQJcN25Fw=/540x799/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/CFCFB3LGQ75OBNIYD36LN74FHQ.jpg");
+    position: relative;
+    bottom: 50px;
+  }
+  #root > main > section > article > div:nth-child(2) {
+    background-image: url("https://img.hankyung.com/photo/202108/01.27351934.1.jpg");
+  }
+  #root > main > section > article > div:nth-child(3) {
+    background-image: url("https://noonoo-images.studiouniversal.net/info/tv/84777/hlmbe736EuN4JP7NM1NjvQgn53I.jpg");
+    position: relative;
+    top: 50px;
+  }
+  #root > main > section > article > div:nth-child(4) {
+    background-image: url("https://blog.kakaocdn.net/dn/bITzc8/btqOzAtbJRE/LHeDEKnBrON4H5M7yVmla1/img.jpg");
+  }
+  #root > main > section > article > div:nth-child(5) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTEyMjRfMTI3/MDAxNTc3MTU0MTY1NzU0.aoV9JbcG3lFGV5kxe1MBzuIB40MjK30pEuRxNlXRCRgg.mfyo8weZf6eLwliScB3NNFvmDwXD39gMWddtviHdJOQg.JPEG.hjy24090/%EB%84%B7%ED%94%84%EB%A6%AD%EC%8A%A4-%ED%8C%90%ED%83%80%EC%A7%80%EB%93%9C%EB%9D%BC%EB%A7%88-%EC%9C%84%EC%B3%90-The_Witcher-%EC%8B%9C%EC%A6%8C1_(4).jpg?type=w800");
+    position: relative;
+    bottom: 50px;
+  }
+  #root > main > section > article > div:nth-child(6) {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNu5i2HQJCbN9m5yOgLFd36GNd-H4i8cc2wLqF07jblOmeVtHE989FLQWLBeXPMYDQuE&usqp=CAU");
+    position: relative;
+    top: 50px;
+  }
+  #root > main > section > article > div:nth-child(7) {
+    background-image: url("https://thumb.mt.co.kr/06/2021/06/2021060416171654420_2.jpg/dims/optimize/");
+  }
+  #root > main > section > article > div:nth-child(8) {
+    background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMDA4MDhfMjM3/MDAxNTk2ODc3NjAyODcx.q-YLr8gSLUl_AQR1IBI05GoN4uuUvWQEbx36B0izw9wg.e1EGKaFQPCWUIvNwkWJtgKxBr4fexMVriXd-M8GQLHIg.JPEG.dkssk715/MV5BNjQ0Mzk0OTE5MF5BMl5BanBnXkFtZTgwNDkyOTI0NTM__V1_.jpg?type=w800");
+    position: relative;
+    bottom: 50px;
+  }
+}/*# sourceMappingURL=netflix.css.map */

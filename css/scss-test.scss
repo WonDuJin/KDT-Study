@@ -1,0 +1,12 @@
+$color : blue ;
+$aaa : flex;
+
+
+div{
+  background-color: $color;
+  display: $aaa;
+}
+
+p{
+  background-color: $color;
+}
