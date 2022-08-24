@@ -24,7 +24,7 @@
 #root > div:nth-child(1) > div:nth-child(1) {
   width: inherit;
   height: inherit;
-  background-color: #505050;
+  background-color: #d3d3d3;
   position: absolute;
   top: 30px;
   background-image: url(https://cdn.pixabay.com/photo/2015/05/29/19/18/cafe-789635_960_720.jpg);

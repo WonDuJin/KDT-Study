@@ -1,14 +1,12 @@
-* {margin: 0; padding: 0; box-sizing: border-box;}
+* {margin: 0; padding: 0; box-sizing: border-box; list-style: none;}
 
 $color:(#111,#222,#333,#444,#555);
-
 ul{
   $index : 0;
   @each $color-value in $color {
     & > li:nth-child(#{$index + 1}){
       background-color: $color-value;
       $index:$index+1;
-    }
-    
+    }    
   }
 }
