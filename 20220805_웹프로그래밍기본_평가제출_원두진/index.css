@@ -115,7 +115,7 @@
     flex-direction: column;
   }
   #root > header > div:nth-child(2) > ul > li {
-    color: #004EA2;
+    color: #2196F3;
     font-size: 8px;
   }
   #root > main > div:nth-child(1) {
