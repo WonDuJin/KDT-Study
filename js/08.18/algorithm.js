@@ -15,8 +15,6 @@ function two() {
   
 }
 console.log(two());
-
-
 function three(parameter) {
   // 첫번째 매개변수 parameter에 "KDT"를 입력하면
   // "KDT"의 데이터 타입이 콘솔에 출력되게끔 알고리즘을 작성하세요.

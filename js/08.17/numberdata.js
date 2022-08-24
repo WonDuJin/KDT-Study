@@ -25,5 +25,4 @@ for (let i = 0; i < numberData.length; i++){
     saveValue = numberData[i];
   }
 }
-
 console.log(saveValue);

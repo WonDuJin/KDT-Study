@@ -6,7 +6,6 @@ const name = studentList.push("공욱재");
 
 console.log(studentList);
 
-
 /*let count = 0;
 for( let i = 0; i < studentList.length; i++){ 
   
