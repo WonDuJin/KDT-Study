@@ -510,7 +510,7 @@ input:focus {
     color: #122023;
     font-weight: 600;
     position: relative;
-    right: 200px;
+    right: 190px;
   }
   #root > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
     width: 428px;
