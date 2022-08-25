@@ -181,8 +181,7 @@ input:focus{outline: none;}
           position: relative;
           top:20px;
           right:50px;
-          border-radius: 5px;
-          
+          border-radius: 5px;          
           & > div:nth-child(1){    
             @include wid-height-backcolor(190px,36px ,$col-green );       
             color: $col-white;
@@ -195,7 +194,7 @@ input:focus{outline: none;}
         /* IP Security PC ver. 시작 */
         & > div:nth-child(6){
           @include dp-set(flex,center ,center);
-          @include position-left(absolute,310px );
+          @include position-left(absolute,310px);
 
           & > p{
             @include font-set(8px,$col-black );
@@ -440,9 +439,7 @@ input:focus{outline: none;}
           @include font-set(12px,$col-black );
           font-weight: 600;
           position: relative;
-          right: 200px;
-          
-
+          right: 190px;
         }
         & > div:nth-child(2){
           @include wid-height-backcolor(428px,167px ,$col-green );

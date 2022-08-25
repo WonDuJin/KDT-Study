@@ -47,10 +47,9 @@ $darkgray:#a9a9a9;
   transform: $transform;
 }
 /*마우스 오버시 설정*/
-
 input{
   border: 1px solid $black;
-  border-radius: 50px;
+  border-radius: 40px;
   @include wh(20vw,2vh);
   background-color: $black;
   color: $white;

@@ -7,5 +7,4 @@ function icecreamPrice(members,price,tax){
   return members * price * tax;
 }
 
-
 console.log(icecreamPrice(30,1500,0.03));

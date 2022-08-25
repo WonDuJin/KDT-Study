@@ -90,11 +90,11 @@ $white:#FFFFFF;
       @include dp-set(flex,center,center);      
       margin-top:10px;
       &>div:nth-child(1){
-        @include whb(190px,35px ,$navy );
+        @include whb(190px,35px ,$navy);
         border-radius: 8px;
         text-align: center;
         color: $white;
-        padding: 5px;;
+        padding: 5px;
         font-weight: bolder;
         font-size: 1em;
       }
@@ -108,7 +108,7 @@ $white:#FFFFFF;
       @include dp-set(flex,center,center);      
       flex-direction: column;
       & > li{
-        color: $navy;
+        color: $blue;
         font-size: 8px;        
       }
     }

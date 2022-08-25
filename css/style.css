@@ -32,7 +32,7 @@ body > root > main > div:nth-child(2) > div:nth-child(1) {
 }
 
 body > root > main > div:nth-child(2) > div:nth-child(1) > div {
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(233, 233, 233);
   width: 60px;
   height: 70px;
 }

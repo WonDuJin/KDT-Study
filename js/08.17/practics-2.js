@@ -16,7 +16,6 @@ if( arr[arr.length-1]===10){
     console.log(arr[i])+"값";
 
   }
-
 }else ("아니지롱!");
 
 
