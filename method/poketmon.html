@@ -6,18 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-  <style></style>
-
-
-<body>
-  <div></div>
-
-  <p>포켓몬이름</p>
-  <p>번호</p>
+<body> 
 
 
   <script>
-    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/149`;
+    const _BASIC_URL = `https://pokeapi.co/api/v2/type/16/`;
     const request = new XMLHttpRequest();
       request.open("GET", _BASIC_URL);
       request.responseType = "json";
@@ -25,27 +18,32 @@
       request.addEventListener('load', () => {
         const _POKEMON_API = request.response;
         // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
-        console.log(_POKEMON_API);
+        console.log(_POKEMON_API.pokemon);
+        console.log(_POKEMON_API.pokemon.length); 
+        
+        let pokemonlength = _POKEMON_API.pokemon.length;
+
+
+        for(let i = 0; i< pokemonlength; i ++){
+          console.log(_POKEMON_API.pokemon[i].pokemon.name);
+          
+          let divTag = document.createElement('div');
+          divTag.value = pokemonlength[i].value;
+          divTag.innerText = pokemonlength[i].innerText;
+          
+          
+        }        
       }); 
 
-      console.log(_BASIC_URL.id);
 
-      const keylist = Object.keys(_BASIC_URL);
-      /*for (key in keylist){
+      
+      
 
-        let k = keylist[key];
+      
 
-        console.log("key는" + k + "개");
-      }*/
+      
 
-      /*for (let i = 0; i < keylist.length; i++){
-
-        let key = keylist[i];
-
-        console.log(key);
-      }*/
-
-      console.log(Object.keys(_BASIC_URL));
+      
 
 
 
