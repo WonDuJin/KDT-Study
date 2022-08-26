@@ -95,10 +95,10 @@
     domStyling.flexSetting(docInit.arrowDiv, 'flex', 'space-between', 'center')
     docInit.arrowDiv.append(docInit.leftDiv)
     docInit.arrowDiv.append(docInit.rightDiv)
-    docInit.leftDiv.textContent = '<'
-    docInit.rightDiv.textContent = '>'
-    domStyling.arrowFontSize(docInit.leftDiv, '2rem', '500', 'grey');
-    domStyling.arrowFontSize(docInit.rightDiv, '2rem', '500', 'grey');
+    docInit.leftDiv.textContent = '◀'
+    docInit.rightDiv.textContent = '▶'
+    domStyling.arrowFontSize(docInit.leftDiv, '2rem', '500', 'black');
+    domStyling.arrowFontSize(docInit.rightDiv, '2rem', '500', 'black');
     domStyling.positionSetting(docInit.arrowDiv, 'absolute', '28vh', '15vw');
     docInit.arrowDiv.style.zIndex = '1';
     
@@ -217,65 +217,12 @@
           // if(i === 0 || i === 5){
           //   cardDiv[i].style.backgroundColor = 'red'
           // }
-          // cardDiv[0].style.backgroundColor = 'red'
-    
-    
+          // cardDiv[0].style.backgroundColor = 'red' 
 
 
 
 
-          // 슬라이드 효과 코드
-          let left = document.getElementById("arrow").children[0];
-          let right = document.getElementById("arrow").children[1];
-          
-          console.log(left);
-          console.log(right);
-    
-          let slideList = document.querySelector('#slideContainer');
-          let slideDiv = document.querySelectorAll('#slideContainer > div');
-          console.log(slideDiv.length);
-    
-    
-          let slideWidth = "500px";
-          let slideNumber = slideDiv.length;
-          
-          let starNum = 0;
-          let current = 0;
-    
-    
-        
-    
-          let firstChild = slideList.firstElementChild;
-          let lastChild = slideList.lastElementChild;
-          let cloneFirst = firstChild.cloneNode(true);
-          let cloneLast = lastChild.cloneNode(true);
-    
-          slideList.appendChild(firstChild);
-          slideList.insertBefore(cloneLast, slideList.firstElementChild);
-          
-    
-          right.addEventListener("click",function(){
-    
-            if(current <= slideNumber-1){
-    
-              
-              slideList.style.transform = "translate3d(500px, 0px ,0px)";
-              
-            }
-    
-              if (current === slideNumber-1){
-    
-                setTimeout(function(){
-                  slideList.style.transition ="0ms";
-                  slideList.style.transform = "translate3d(-0px, 0px, 0px)";
-    
-                }, 500);  
-                current = -1;
-    
-              }
-              current +=1;
-          });
-    
+      
     
     
         }
@@ -420,9 +367,24 @@
 
 
 // 슬라이드 이벤트 코드
-  
+    
+    const slideRail = document.querySelector("#slideContainer")
+    console.log(slideRail);
+
+    let rightButton = document.getElementById("arrow").children[1];
+    console.log(rightButton);
 
 
+    rightButton.addEventListener("click", function(){
+
+
+
+
+
+    })
+    
+
+    
   
 </script>
 </body>
