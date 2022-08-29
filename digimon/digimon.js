@@ -42,3 +42,10 @@ for(let i = 0; i <pokemonLength; i++){
 
 console.log (pokemon);
 //포켓몬 API 데이터
+
+
+
+const pokemonText = pokemon.map(function(element){
+  return element + "님";
+});
+console.log(pokemonText);
