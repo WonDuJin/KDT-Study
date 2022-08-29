@@ -9,6 +9,7 @@
 <body>
   <div id="root"></div>
   <script>
+    let url = window.navigator.language;
     const docInit = {
       body: document.body,
       root: document.getElementById('root'),
@@ -86,6 +87,7 @@
     // 중앙 정렬 div
     docInit.root.append(docInit.centerDiv)
     domStyling.size(docInit.centerDiv, '80vw', '40vh');
+    docInit.centerDiv.id = 'slideBox'
     // domStyling.bgColor(docInit.centerDiv, 'greenyellow')
 
     // arrow div
@@ -140,6 +142,7 @@
 
         for(let i = 0; i < 6 ; i++){
           let cardDiv = document.createElement('div');
+          cardDiv.id = "card"
           // 단일 카드 내부 div들
           // 카드 위 이미지 부분
           let cardTopDiv = document.createElement('div');
@@ -368,20 +371,20 @@
 
 // 슬라이드 이벤트 코드
     
-    const slideRail = document.querySelector("#slideContainer")
-    console.log(slideRail);
-
+    let parents = document.querySelector("#slideContainer")
+    let slideRail = parents.querySelectorAll("div.card > div");
+    console.log(parents.children.length);
+    // console.log(slideRail.children);
+    // console.log(slideRail.children.length);
+    
+    
     let rightButton = document.getElementById("arrow").children[1];
     console.log(rightButton);
 
 
     rightButton.addEventListener("click", function(){
 
-
-
-
-
-    })
+    });
     
 
     
