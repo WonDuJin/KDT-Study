@@ -13,6 +13,7 @@
 <body>
   <div id="root"></div>
   <script>
+    let url = window.navigator.language;
     const docInit = {
       body: document.body,
       root: document.getElementById('root'),
@@ -88,12 +89,19 @@
     domStyling.flexSetting(docInit.root, 'flex', 'center', 'center');
 
     // 중앙 정렬 div
+
     docInit.root.append(docInit.centerDiv);
     domStyling.size(docInit.centerDiv, '900px', '600px');
     docInit.centerDiv.id = 'slideBox';
     docInit.centerDiv.style.overflow = 'hidden';
     docInit.centerDiv.style.position = 'relative';
     
+
+    docInit.root.append(docInit.centerDiv)
+    domStyling.size(docInit.centerDiv, '80vw', '40vh');
+    docInit.centerDiv.id = 'slideBox'
+    // domStyling.bgColor(docInit.centerDiv, 'greenyellow')
+
 
     // arrow div
     docInit.centerDiv.append(docInit.arrowDiv);
@@ -134,6 +142,7 @@
 
         for(let i = 0; i < 6 ; i++){
           let cardDiv = document.createElement('div');
+          cardDiv.id = "card"
           // 단일 카드 내부 div들
           // 카드 위 이미지 부분
           let cardTopDiv = document.createElement('div');
@@ -200,6 +209,7 @@
     
     
 
+
     const slideRail = document.querySelector("#slideContainer");     
     const slideDiv = document.querySelectorAll("#slideContainer div");
     const rightButton = document.getElementById("arrow").children[1];
@@ -210,6 +220,17 @@
     const slideMargin = 30;
 
     console.log(slideBox.children[1].children.length);
+
+    /*let parents = document.querySelector("#slideContainer")
+    let slideRail = parents.querySelectorAll("div.card > div");
+    console.log(parents.children.length);
+    // console.log(slideRail.children);
+    // console.log(slideRail.children.length);
+    
+    
+    let rightButton = document.getElementById("arrow").children[1];
+    console.log(rightButton);*/
+
 
 
     /*makeClone();
@@ -249,6 +270,7 @@
     console.dir(slideNumber);
 
 
+
     slideRail.style.position ="absolute";
     slideRail.style.transition = "left 0.5s ease-out";
     
@@ -278,6 +300,7 @@
     }
 
     
+
 
     
 
