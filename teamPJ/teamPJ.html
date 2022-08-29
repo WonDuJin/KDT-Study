@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    *{margin: 0;padding: 0; box-sizing: border-box;}
+  </style>
 </head>
 <body>
   <div id="root"></div>
@@ -84,19 +88,25 @@
     domStyling.flexSetting(docInit.root, 'flex', 'center', 'center');
 
     // 중앙 정렬 div
-    docInit.root.append(docInit.centerDiv)
-    domStyling.size(docInit.centerDiv, '80vw', '40vh');
-    // domStyling.bgColor(docInit.centerDiv, 'greenyellow')
+    docInit.root.append(docInit.centerDiv);
+    domStyling.size(docInit.centerDiv, '900px', '600px');
+    docInit.centerDiv.id = 'slideBox';
+    docInit.centerDiv.style.overflow = 'hidden';
+    docInit.centerDiv.style.position = 'relative';
+    
 
     // arrow div
-    docInit.centerDiv.append(docInit.arrowDiv)
+    docInit.centerDiv.append(docInit.arrowDiv);
     docInit.arrowDiv.id = 'arrow'
-    domStyling.size(docInit.arrowDiv, '70vw', '40vh');
     domStyling.flexSetting(docInit.arrowDiv, 'flex', 'space-between', 'center')
-    docInit.arrowDiv.append(docInit.leftDiv)
-    docInit.arrowDiv.append(docInit.rightDiv)
+    docInit.arrowDiv.append(docInit.leftDiv);
+    docInit.arrowDiv.append(docInit.rightDiv);
     docInit.leftDiv.textContent = '◀'
+    docInit.leftDiv.style.position = "absolute";
+    docInit.leftDiv.style.right = "300px";    
     docInit.rightDiv.textContent = '▶'
+    docInit.rightDiv.style.position = "absolute";
+    docInit.rightDiv.style.left = "500px";
     domStyling.arrowFontSize(docInit.leftDiv, '2rem', '500', 'black');
     domStyling.arrowFontSize(docInit.rightDiv, '2rem', '500', 'black');
     domStyling.positionSetting(docInit.arrowDiv, 'absolute', '28vh', '15vw');
@@ -104,25 +114,11 @@
     
     //cardslide div
     docInit.centerDiv.append(docInit.slideContainer);
-    domStyling.size(docInit.slideContainer, '80vw', '40vh');
+    
     docInit.slideContainer.id = 'slideContainer';
     domStyling.flexSetting(docInit.slideContainer, 'flex', 'space-around', 'flex-start');
-    // docInit.slideContainer.append(docInit.cardDivOne);
-    // docInit.slideContainer.append(docInit.cardDivTwo);
-    // docInit.slideContainer.append(docInit.cardDivThree);
-    // docInit.slideContainer.append(docInit.cardDivFour);
-    // docInit.slideContainer.append(docInit.cardDivFive);
-    // docInit.slideContainer.append(docInit.cardDivSix);
-    // domStyling.size(docInit.cardDivTwo, '10vw', '40vh');
-    // domStyling.bgColor(docInit.cardDivTwo, 'cadetblue');
-
-
-
-
-
-
-
-
+    
+    
     // 단일 카드 내부 div
     // 카드 이미지 부분
     const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
@@ -132,9 +128,7 @@
         request.send();
         request.addEventListener('load', () => {
         const _POKEMON_API = request.response;
-        console.log(_POKEMON_API);
-        // console.log(_POKEMON_API.results);
-        // console.log(_POKEMON_API.results.length);
+        console.log(_POKEMON_API);       
         const pokemonList = _POKEMON_API.results;
         console.log(pokemonList);
 
@@ -151,40 +145,26 @@
           let textDiv = document.createElement('div');
           let underLineDiv = document.createElement('div');
           let textAlignDiv = document.createElement('div');
-          docInit.slideContainer.append(cardDiv)
-          cardDiv.style.width = '10vw';
+          docInit.slideContainer.append(cardDiv);
+          cardDiv.style.width = '300px';
           cardDiv.style.height = '40vh';
-          // cardDiv.style.backgroundColor = 'green';
+          cardDiv.classList.add("slide_item");
           
-          cardDiv.append(cardTopDiv)
-          domStyling.size(cardTopDiv, '10vw', '20vh')
-
-          // const _pokemonForm_URL = `https://pokeapi.co/api/v2/pokemon-form/?offset=0&limit=905`;
-          // const formRequest = new XMLHttpRequest();
-          // formRequest.open("GET", _pokemonForm_URL);
-          // formRequest.responseType = "json";
-          // formRequest.send();
-          // formRequest.addEventListener('load', () => {
-          //   const _POKEMONFORM_API = formRequest.response;
-          //   // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
-          //   console.log(_POKEMONFORM_API);
-          //   console.log(_POKEMONFORM_API.results[0].url)
-          //   cardTopDiv.style.backgroundImage = 'url("' + _POKEMONFORM_API.results[i].url + '")';
-          // });
+          
+          cardDiv.append(cardTopDiv);
+          domStyling.size(cardTopDiv, '10vw', '20vh');
+          
           cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png)`
           cardTopDiv.style.backgroundSize = '10vw 20vh'
           
           domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
           domStyling.flexSetting(cardTopDiv, 'flex', 'flex-start', 'flex-end')
-          // cardTopDiv.append(numberDiv);
-          // domStyling.size(numberDiv, '3vw', '3vh')
-          // numberDiv.textContent = 'No.' + (i+1)
-          // numberDiv.style.textAlign = 'center'
-          domStyling.bgColor(numberDiv, '')
+        
+          domStyling.bgColor(numberDiv, '');
           // 카드 텍스트 부분
-          cardDiv.append(cardBottomDiv)
+          cardDiv.append(cardBottomDiv);
           domStyling.size(cardBottomDiv, '10vw', '20vh');
-          // domStyling.bgColor(cardBottomDiv, 'white')
+          
           // 포켓몬 텍스트 부분
           cardBottomDiv.append(pokemonDivBox)
           domStyling.size(pokemonDivBox, '10vw', '5vh');
@@ -205,183 +185,100 @@
           cardBottomDiv.append(textDiv);
           domStyling.size(textDiv, '10vw', '15vh');
           domStyling.textFontSize(textDiv, '1rem', '10', 'black')
-          // domStyling.bgColor(textDiv, 'blue');
+        
           textDiv.append(textAlignDiv)
           textAlignDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
-          // textAlignDiv.style.textAlign = 'justify'
-          // textAlignDiv.style.lineHeight = '25px'
-          domStyling.flexWebkit(textDiv)
 
-
-          // 0번째, 5번째 투명도 시도
-          // if(i === 0 || i === 5){
-          //   cardDiv[i].style.backgroundColor = 'red'
-          // }
-          // cardDiv[0].style.backgroundColor = 'red' 
-
-
-
-
-      
-    
-    
+          domStyling.flexWebkit(textDiv)   
         }
       });
 
 
-
-  // docInit.cardDivTwo.append(docInit.cardTopDiv)
-  // domStyling.size(docInit.cardTopDiv, '10vw', '20vh')
-  // domStyling.bgColor(docInit.cardTopDiv, 'pink')
-  // domStyling.flexSetting(docInit.cardTopDiv, 'flex', 'flex-start', 'flex-end')
-  // docInit.cardTopDiv.append(docInit.numberDiv);
-  // domStyling.size(docInit.numberDiv, '3vw', '3vh')
-  // docInit.numberDiv.textContent = 'No.1'
-  // docInit.numberDiv.style.textAlign = 'center'
-  // domStyling.bgColor(docInit.numberDiv, '')
-  // // 카드 텍스트 부분
-  // docInit.cardDivTwo.append(docInit.cardBottomDiv)
-  // domStyling.size(docInit.cardBottomDiv, '10vw', '20vh');
-  // domStyling.bgColor(docInit.cardBottomDiv, 'white')
-  // // 포켓몬 텍스트 부분
-  // docInit.cardBottomDiv.append(docInit.pokemonDivBox)
-  // domStyling.size(docInit.pokemonDivBox, '10vw', '5vh');
-  // domStyling.bgColor(docInit.pokemonDivBox, '');
-  // domStyling.flexSetting(docInit.pokemonDivBox, 'flex', 'center', 'center');
-  // docInit.pokemonDivBox.append(docInit.pokemonDiv);
-  // domStyling.size(docInit.pokemonDiv, '3vw', '3vh');
-  // domStyling.bgColor(docInit.pokemonDiv, '');
-  // docInit.pokemonDiv.textContent = '"포켓몬"';
-  // domStyling.flexWebkit(docInit.pokemonDiv)
-  // domStyling.pokemonFontSize(docInit.pokemonDiv, '0.8rem', '100','black')
-  // docInit.pokemonDiv.append(docInit.underLineDiv);
-  // domStyling.size(docInit.underLineDiv, '2vw', '0.5vh');
-  // docInit.underLineDiv.style.backgroundColor = 'pink'
-  // docInit.pokemonDiv.style.flexDirection = 'column'
-  // domStyling.flexSetting(docInit.pokemonDiv, 'flex', 'space-between', 'center')
-  // // lorem 텍스트 부분
-  // docInit.cardBottomDiv.append(docInit.textDiv);
-  // domStyling.size(docInit.textDiv, '10vw', '15vh');
-  // domStyling.bgColor(docInit.textDiv, 'blue');
-  // docInit.textDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
-  // domStyling.flexWebkit(docInit.textDiv)
-
-
-
-
-
-
-
-
-
-
-
-
-  // API 코드
-    // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
-    // const request = new XMLHttpRequest();
-    //   request.open("GET", _BASIC_URL);
-    //   request.responseType = "json";
-    //   request.send();
-    //   request.addEventListener('load', () => {
-    //   const _POKEMON_API = request.response;
-      // 상수 _POKEMON_API 데이터
-
-  //     console.log(_POKEMON_API);
-  //     // console.log(_POKEMON_API.results);
-  //     console.log(_POKEMON_API.results.length);
-
-  //     const pokmonList = _POKEMON_API.results;
-  //     console.log(pokmonList);
-
-  //     const docInit = {
-  //       body: document.body,
-  //       root: document.getElementById('root'),
-  //       centerDiv: document.createElement('div'),
-  //       arrow: document.createElement('div'),
-  //       leftDiv: document.createElement('div'),
-  //       rightDiv: document.createElement('div'),
-  //       slideContainer: document.createElement('div'),
-  //     }
-
-  //     const domStyling = {
-  //       size: function(element, width, height){
-  //         element.style.width = width;      
-  //         element.style.height = height;      
-  //       },
-  //       bgColor: function(element, backgroundColor) {
-  //         element.style.backgroundColor = backgroundColor;
-  //       },
-  //       flexSetting: function(element, display, justifyContent, alignItems) {
-  //         element.style.display = display;
-  //         element.style.justifyContent = justifyContent;
-  //         element.style.alignItems = alignItems;
-  //       }
-  //     }
-
-  //     // #root style
-  //     domStyling.size(docInit.root, '100vw', '100vh');
-  //     domStyling.bgColor(docInit.root, '');
-  //     domStyling.flexSetting(docInit.root, 'flex', 'center', 'center'); 
-
-  //     // centerDiv style
-  //     docInit.root.appendChild(docInit.centerDiv);
-      
-  //     // #arrow style
-  //     docInit.arrow.id ='arrow'
-  //     docInit.centerDiv.appendChild(docInit.arrow);
-
-  //     // #arrow > leftDiv style
-  //     docInit.arrow.appendChild(docInit.leftDiv);
-
-  //     // #arrow > rightDiv style
-  //     docInit.arrow.appendChild(docInit.rightDiv);
-
-  //     // #slideContainer style
-  //     docInit.slideContainer.id = 'slideContainer'
-  //     docInit.centerDiv.appendChild(docInit.slideContainer);
-        
-
-  //     // const pokemonList = 
-
-  //     for(let i = 0; i < pokmonList.length; i++) {
-  //       const pokemonCard = document.createElement('div');
-  //       // console.log(pokemonCard.length);
-  //       // console.log(pokemonCard.textContent);
-
-  //       docInit.slideContainer.append(docInit.pokemonCard);
-
-  //       const pokemonCardTextNode = document.createTextNode(pokmonList[0].name);
-  //       pokemonCard.appendChild(pokemonCardTextNode);
-
-  //       // console.log(pokemonCardTextNode);
-
-  //       if(pokmonList[i].length === pokemonCard.length) {
-  //         pokemonCard.innerHTML = pokmonList[i].name;
-  //       }
-
-  //     }
-
-
-    // });
-
-
 // 슬라이드 이벤트 코드
+    const slideBox = document.getElementById("slideBox");
+
     
-    const slideRail = document.querySelector("#slideContainer")
-    console.log(slideRail);
+    
 
-    let rightButton = document.getElementById("arrow").children[1];
-    console.log(rightButton);
+    const slideRail = document.querySelector("#slideContainer");     
+    const slideDiv = document.querySelectorAll("#slideContainer div");
+    const rightButton = document.getElementById("arrow").children[1];
+    const leftButton = document.getElementById("arrow").children[0];
+    const slideNumber = slideDiv.length;
+    const currentIndex = 0;
+    const slideWidth = 300;
+    const slideMargin = 30;
+
+    console.log(slideBox.children[1].children.length);
 
 
-    rightButton.addEventListener("click", function(){
+    /*makeClone();
+
+    function makeClone(){
+      for (let i = 0; i< 6; i++){
+        
+        let cloneSlide = slideDiv[i].cloneNode(true);
+        cloneSlide.classList.add('clone');
+        slideRail.appendChild(cloneSlide);
+      }
+      for(let i = 5; i >=0; i--){
+        cloneSlide.classList.add('clone');
+        slideRail.prepend(cloneSlide);
+      }
+      updateWidth();
+      setInitialPos();
+      setTimeout(function(){
+        slideRail.style.transition = "left 0  .5s ease-out";
+      },100);
+    }*/
+
+    /*function updateWidth() {
+
+      let currentslideRail = document.querySelectorAll("#slideContainer div");
+      let newslideNumber = currentslideRail.length;
+
+      let newWidth = (slideWidth + slideMargin)*newslideNumber - slideMargin + "px";
+      slideRail.style.width =newWidth;
+      
+    }
+    function setInitialPos(){
+      let initialTrans = -(slideWidth + slideMargin)*slideNumber;
+      slideRail.style.transform = 'tranxslateX(-' + initialTrans +'px)';
+    }
+    console.log(slideRail.children);
+    console.dir(slideNumber);
 
 
+    slideRail.style.position ="absolute";
+    slideRail.style.transition = "left 0.5s ease-out";
+    
+    slideRail.style.width = (slideWidth + slideMargin)*slideNumber - slideMargin + "px";*/
 
 
+    rightButton.addEventListener("click", function(){      
+        moveSlide(currentIndex +1);
+    });
+    leftButton.addEventListener("click", function(){      
+        moveSlide(currentIndex - 1);    
+    });
+    function moveSlide(num){
+      slideRail.style.left = -num * (slideWidth + slideMargin) +"px";
+      currentIndex = num;
+      if(currentIndex === slideNumber|| currentIndex === -slideNumber){
+        setTimeout(function(){
 
-    })
+          slideRail.classList.remove('animated');
+          slideRail.style.left = "0px";
+          currentIndex = 0;
+        },500);
+        setTimeout(function(){
+          slideRail.classList.add('animated');
+        },600);
+      } 
+    }
+
+    
+
     
 
     
