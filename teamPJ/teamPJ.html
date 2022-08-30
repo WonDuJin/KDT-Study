@@ -205,11 +205,6 @@
 
 // 슬라이드 이벤트 코드
     const slideBox = document.getElementById("slideBox");
-
-    
-    
-
-
     const slideRail = document.querySelector("#slideContainer");     
     const slideDiv = document.querySelectorAll("#slideContainer div");
     const rightButton = document.getElementById("arrow").children[1];
@@ -233,16 +228,17 @@
 
 
 
-    /*makeClone();
+    makeClone();
 
     function makeClone(){
-      for (let i = 0; i< 6; i++){
+      for (let i = 0; i< slideNumber; i++){
         
         let cloneSlide = slideDiv[i].cloneNode(true);
         cloneSlide.classList.add('clone');
         slideRail.appendChild(cloneSlide);
       }
-      for(let i = 5; i >=0; i--){
+      for(let i = slideNumber-1; i >=0; i--){
+        let cloneSlide = slideDiv[i].cloneNode(true);
         cloneSlide.classList.add('clone');
         slideRail.prepend(cloneSlide);
       }
@@ -251,9 +247,9 @@
       setTimeout(function(){
         slideRail.style.transition = "left 0  .5s ease-out";
       },100);
-    }*/
+    }
 
-    /*function updateWidth() {
+    function updateWidth() {
 
       let currentslideRail = document.querySelectorAll("#slideContainer div");
       let newslideNumber = currentslideRail.length;
@@ -274,7 +270,7 @@
     slideRail.style.position ="absolute";
     slideRail.style.transition = "left 0.5s ease-out";
     
-    slideRail.style.width = (slideWidth + slideMargin)*slideNumber - slideMargin + "px";*/
+    slideRail.style.width = (slideWidth + slideMargin)*slideNumber - slideMargin + "px";
 
 
     rightButton.addEventListener("click", function(){      
