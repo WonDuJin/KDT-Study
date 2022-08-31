@@ -128,7 +128,7 @@
         console.log(pokemonList);
 
         const cardDivArr = []
-        for(let i = 0; i < 898 ; i++){
+        for(let i = 0; i < 400 ; i++){
           let cardDiv = document.createElement('div');
           // 단일 카드 내부 div들
           // 카드 위 이미지 부분
@@ -144,7 +144,7 @@
           docInit.slideContainer.append(cardDiv)
           cardDiv.style.width = '300px';
           cardDiv.style.height = '40vh';          
-          cardDiv.style.transition = "0.5s ease-out";
+            
           cardDiv.id = `card${i}`
           cardDivArr[i] = cardDiv
           // cardDiv.style.backgroundColor = 'green';
@@ -168,7 +168,7 @@
           domStyling.bgColor(numberDiv, '')
           // 카드 텍스트 부분
           cardDiv.append(cardBottomDiv)
-          domStyling.size(cardBottomDiv, '10vw', '20vh');
+          domStyling.size(cardBottomDiv, '300px', '20vh');
           // domStyling.bgColor(cardBottomDiv, 'white')
           // 포켓몬 텍스트 부분
           cardBottomDiv.append(pokemonDivBox)
@@ -297,8 +297,8 @@
 
         if (currentIndex === 0){
           setTimeout(function(){
-            slideList.style.left = -slideLength * (slideWidth + slideMargin)+ "px";
-            slideList.style.transition = `${0}s ease-out`;
+            slideList.style.transition = "0ms"
+            slideList.style.transform = "translate3d(-" + (slideWidth * slideLength) + "px, 0px, 0px)";
           }, slideSpeed);
           currentIndex = slideLength;
         }
