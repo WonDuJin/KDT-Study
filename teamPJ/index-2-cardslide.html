@@ -85,23 +85,32 @@
 
     // 중앙 정렬 div
     docInit.root.append(docInit.centerDiv)
-    docInit.centerDiv.id = 'centerDiv'
-    domStyling.size(docInit.centerDiv, '80vw', '40vh');
+    docInit.centerDiv.id = 'centerDiv'    
+    domStyling.size(docInit.centerDiv,'900px','40vh');
+    domStyling.flexWebkit(docInit.centerDiv,'flex','hidden');
     // domStyling.bgColor(docInit.centerDiv, 'greenyellow')
 
     // arrow div
-    docInit.centerDiv.append(docInit.arrowDiv)
+    docInit.centerDiv.append(docInit.arrowDiv)    
     docInit.arrowDiv.id = 'arrow'
     domStyling.size(docInit.arrowDiv, '70vw', '40vh');
     domStyling.flexSetting(docInit.arrowDiv, 'flex', 'space-between', 'center')
     docInit.arrowDiv.append(docInit.leftDiv)
     docInit.arrowDiv.append(docInit.rightDiv)
-    docInit.leftDiv.textContent = '<'
-    docInit.rightDiv.textContent = '>'
-    domStyling.arrowFontSize(docInit.leftDiv, '2rem', '500', 'grey');
+    domStyling.size(docInit.leftDiv,"30px","40px");
+    docInit.leftDiv.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423347_960_720.png")';
+    docInit.leftDiv.style.backgroundSize = "100%"
+    docInit.leftDiv.style.backgroundRepeat = "no-repeat"
+    docInit.leftDiv.style.cursor = "pointer"
+    //왼쪽 화살표
+    domStyling.size(docInit.rightDiv,"30px","40px");
+    docInit.rightDiv.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423349_960_720.png")';
+    docInit.rightDiv.style.backgroundSize = "100%"
+    docInit.rightDiv.style.backgroundRepeat = "no-repeat"
+    docInit.rightDiv.style.cursor = "pointer"
     domStyling.arrowFontSize(docInit.rightDiv, '2rem', '500', 'grey');
     domStyling.positionSetting(docInit.arrowDiv, 'absolute', '28vh', '15vw');
-    docInit.arrowDiv.style.zIndex = '1';
+    
     
     //cardslide div
     docInit.centerDiv.append(docInit.slideContainer);
@@ -150,14 +159,16 @@
           // cardDiv.style.backgroundColor = 'green';
           
           cardDiv.append(cardTopDiv)
-          domStyling.size(cardTopDiv, '10vw', '20vh')
+          domStyling.size(cardTopDiv, '300px', '20vh')
 
 
 
 
 
           cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png)`
-          cardTopDiv.style.backgroundSize = '10vw 20vh'
+          cardTopDiv.style.backgroundSize = '200px 20vh'
+          cardTopDiv.style.backgroundRepeat = 'no-repeat'
+          cardTopDiv.style.backgroundPosition = 'center'
           
           domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
           domStyling.flexSetting(cardTopDiv, 'flex', 'flex-start', 'flex-end')
@@ -172,12 +183,12 @@
           // domStyling.bgColor(cardBottomDiv, 'white')
           // 포켓몬 텍스트 부분
           cardBottomDiv.append(pokemonDivBox)
-          domStyling.size(pokemonDivBox, '10vw', '5vh');
+          domStyling.size(pokemonDivBox, '300px', '5vh');
           domStyling.bgColor(pokemonDivBox, '');
           domStyling.flexSetting(pokemonDivBox, 'flex', 'center', 'center');
           pokemonDivBox.append(pokemonDiv);
-          domStyling.size(pokemonDiv, '3vw', '3vh');
-          domStyling.bgColor(pokemonDiv, '');
+          domStyling.size(pokemonDiv, '300px', '3vh');
+          domStyling.bgColor(pokemonDiv, ''); 
           pokemonDiv.textContent = pokemonList[i].name;
           domStyling.flexWebkit(pokemonDiv)
           domStyling.pokemonFontSize(pokemonDiv, '0.8rem', '100','black')
@@ -188,7 +199,7 @@
           domStyling.flexSetting(pokemonDiv, 'flex', 'space-between', 'center')
           // lorem 텍스트 부분
           cardBottomDiv.append(textDiv);
-          domStyling.size(textDiv, '10vw', '15vh');
+          domStyling.size(textDiv, '300px', '15vh');
           domStyling.textFontSize(textDiv, '1rem', '10', 'black')
           // domStyling.bgColor(textDiv, 'blue');
           textDiv.append(textAlignDiv)
@@ -303,8 +314,9 @@
           currentIndex = slideLength;
         }
         currentIndex -= 1;
-        });
-
+      });
+    });
+      
 
 
 
@@ -389,7 +401,6 @@
 
 
 
-      });
 
 
 
