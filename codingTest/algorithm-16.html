@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+
+    const root = document.getElementById("root");
+    const multipltBoard = document.getElementById("multiplyBoard");
+
+    function multiply(a,b){
+      let result = Math.abs(a * b);
+
+      if(Number.isInteger(result)){
+        return result;
+      }else{
+        return Math.floor(result * 10) / 10;
+      }
+    }
+    
+    
+    let multiplyCounter = 0;
+    for (let i = 1; i <= 9; i++){           
+      for (let j = 1; j <= 9; j++){
+        let element = document.createElement("p");
+        element.innerText = `${i} * ${j} = ${multiply(i,j)}`
+        let result = `${(i*j)}`;        
+        
+        root.appendChild(element);
+        multiplyCounter ++
+        
+      }
+    }     
+    console.log("실행된 횟수 :" + multiplyCounter);
+    
+    console.log(multiply(1.1424,3));
+    console.log(multiply(-43,3));
+
+    function sigma (dan){
+      let total = 0;
+      for(let i = 0; i <= 9 ; i++){
+        total += multiply(dan,i);
+      }
+      return total;
+    }
+    
+    console.log(`1단의 합계 : ${sigma(8)}`);
+    
+
+
+
+
+  </script>
+</body>
+</html>
