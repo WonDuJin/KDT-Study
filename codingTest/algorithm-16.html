@@ -10,8 +10,11 @@
   <div id="root"></div>
   <script>
 
+    
+
     const root = document.getElementById("root");
     const multipltBoard = document.getElementById("multiplyBoard");
+    let resultArray = [];
 
     function multiply(a,b){
       let result = Math.abs(a * b);
@@ -20,7 +23,7 @@
         return result;
       }else{
         return Math.floor(result * 10) / 10;
-      }
+      }      
     }
     
     
@@ -29,13 +32,14 @@
       for (let j = 1; j <= 9; j++){
         let element = document.createElement("p");
         element.innerText = `${i} * ${j} = ${multiply(i,j)}`
-        let result = `${(i*j)}`;        
-        
+            
         root.appendChild(element);
-        multiplyCounter ++
+        multiplyCounter ++        
         
       }
     }     
+    
+    
     console.log("실행된 횟수 :" + multiplyCounter);
     
     console.log(multiply(1.1424,3));
@@ -50,6 +54,22 @@
     }
     
     console.log(`1단의 합계 : ${sigma(8)}`);
+
+    const ptag = document.querySelectorAll("#root > p");
+    
+    for(let i = 0; i < ptag.length; i++)
+    root.addEventListener("click",function(){
+
+      
+
+    });
+    
+
+    
+
+    
+
+
     
 
 

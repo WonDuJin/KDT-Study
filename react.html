@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-type="module">
+    const root = document.getElementById("root");
+    console.log(root);
+
+    function Test(){
+      return (
+        <header>
+          <ul>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+            <li>김근수</li>
+          </ul>
+        </header>
+      );
+    }
+    
+
+    function OldConstructor(id,name,type){
+      this.id = id;
+      this.name = name;
+      this.type = type;
+    }
+
+    const oldInstance = new OldConstructor(1,"이상해씨","풀");
+    console.log(oldInstance);
+    
+    function Size(width,height){
+      this.width = width;
+      this.height = height;
+    }
+
+    function addElement(tagName,props){
+      let element = document.querySelector(tagName);
+      for(const cssValue in props){
+        console.log(`검사하기, 동작하는 스타일링 프로퍼티 : ${cssValue}`);
+        if(cssValue === "width"){
+          element.width = props[cssValue];
+        }else{
+          element.style[cssValue] = props[cssValue];
+        }
+      }
+    }
+    
+    addElement("div",Size("100vw","100vh"));
+
+    
+
+    ReactDOM.render(<Test />,root);
+
+    
+  </script>
+  
+</body>
+</html>
