@@ -12,16 +12,17 @@ const setDomComponent = (tagName, content, attributeName, props) => {
       if (getDataArr.length === 0) {
         let tempArray = [];
         tempArray.push("<");
-        tempArray.push(tagName + "\u00A0" + attributeName + '="');
+        tempArray.push(tagName + " " + attributeName + '="');
+        //+ 를 쓴 이유는 합치고있다는 걸 보여줌
         for (const keys in props) {
-          tempArray.push("\u00A0" + keys + ":" + props[keys] + ";");
+          tempArray.push(" " + keys + ":" + props[keys] + ";");
         }
         tempArray.push('">');
         getDataArr.push(tempArray.join(""));
       }
     }
     getDataArr.push(content);
-    getDataArr.push(`</${tagName}`);
+    getDataArr.push(`</${tagName}>`);
   } catch (e) {
     console.error(e, "need checking arguments data type");
   } finally {
@@ -32,7 +33,7 @@ const setDomComponent = (tagName, content, attributeName, props) => {
 let dynamicElement = setDomComponent("div", "hello", "style", {
   width: "100px",
   height: "100px",
-  backgroundColor: "salmon"
+  "background-color": "salmon",
 });
 
 const mainPage = `
@@ -63,3 +64,5 @@ http
   .listen(5555, () => {
     console.log(byteChecker(mainPage), "Server listening on port 555");
   });
+
+//Body에도 스타일이 붙은 이유는 해석 과정이 삭제가 되어있는 현상이다.
