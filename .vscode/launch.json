@@ -5,12 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Index",
+      "program": "${workspaceFolder}/problem/problem.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\debug\\debug.js"
     }
   ]
